@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coastal sediment improvement landscape architecture project for Samut Sakhon, Thailand, with sea level rise mapping, master planning, and sediment restoration tools." />
+
+  <title>Coastal Sediment Improvement | Lakanapohn Sinparu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="scroll-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page coastal-page">
+
+    <header class="topbar">
+      <a href="index.html" class="top-left-brand">
+        <span>Portfolio</span>
+        <strong>Lakanapohn Sinparu</strong>
+      </a>
+
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="landscape-work.html" aria-current="page">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="coastal-main">
+      <section class="coastal-intro">
+        <p class="project-label">Landscape Architecture</p>
+        <h1>Coastal Sediment Improvement for Mahachai Mangrove</h1>
+        <p>
+          This conceptual design explores how landscape architecture can slow coastal erosion,
+          encourage sediment deposition, and rebuild mangrove habitat in Samut Sakhon, Thailand.
+          The story is inspired by research on Samut Sakhon in the Bangkok Metropolitan Region and
+          translates coastal processes into a layered design strategy: understand sea level rise,
+          place adaptive tools, trap sediment, and let mangrove systems grow with community stewardship.
+        </p>
+      </section>
+
+      <section class="coastal-slideshow" aria-label="Coastal sediment improvement image slideshow">
+        <button class="coastal-slide-arrow coastal-slide-arrow-left" type="button" aria-label="Previous image">‹</button>
+
+        <figure class="coastal-slide-card">
+          <div class="coastal-image-frame" id="coastalImageFrame" aria-live="polite"></div>
+          <figcaption class="coastal-caption">
+            <p id="coastalSlideNumber">01 / 05</p>
+            <h2 id="coastalSlideTitle">Sea Level Rise and Site Map</h2>
+            <p id="coastalSlideDescription"></p>
+          </figcaption>
+        </figure>
+
+        <button class="coastal-slide-arrow coastal-slide-arrow-right" type="button" aria-label="Next image">›</button>
+      </section>
+
+      <section class="coastal-thumbnails" aria-label="Coastal sediment improvement thumbnails"></section>
+    </main>
+  </div>
+
+  <script>
+    const coastalSlides = [
+      {
+        title: "Sea Level Rise and Site Map",
+        description: "The opening map frames Mahachai Mangrove as a vulnerable coastal edge between aquaculture land, canals, settlement, and the Gulf of Thailand. It highlights sea level rise exposure, eroding shoreline segments, and the project site where sediment-based landscape tools can be tested before connecting to wider mangrove restoration corridors.",
+        image: `<svg class="coastal-svg" viewBox="0 0 1200 680" role="img" aria-labelledby="mapTitle"><title id="mapTitle">Sea level rise map with coastal sediment improvement site</title><defs><linearGradient id="water" x1="0" x2="1"><stop offset="0" stop-color="#234b57"/><stop offset="1" stop-color="#74aeb0"/></linearGradient><radialGradient id="glow" cx="65%" cy="56%" r="40%"><stop offset="0" stop-color="#f6e6b2" stop-opacity=".75"/><stop offset="1" stop-color="#f6e6b2" stop-opacity="0"/></radialGradient><pattern id="ponds" width="46" height="34" patternUnits="userSpaceOnUse"><path d="M0 0H46V34H0Z" fill="#304334"/><path d="M2 4H44M2 18H44M13 0V34M32 0V34" stroke="#7b9364" stroke-width="2" opacity=".5"/></pattern></defs><rect width="1200" height="680" fill="#101d22"/><path d="M0 0H1200V430C1030 390 910 390 780 432 570 500 345 508 0 470Z" fill="url(#ponds)" opacity=".95"/><path d="M0 418C200 465 410 476 615 442 830 406 960 340 1200 398V680H0Z" fill="url(#water)"/><path d="M0 475C220 518 420 532 610 492 825 448 970 396 1200 450" fill="none" stroke="#e4b23c" stroke-width="7" stroke-dasharray="18 18"/><path d="M235 430C310 474 415 474 500 448 575 426 630 392 690 390" fill="none" stroke="#d35c4c" stroke-width="8"/><path d="M515 430C640 405 790 330 920 350" fill="none" stroke="#90c979" stroke-width="7"/><circle cx="430" cy="432" r="18" fill="#e4b23c"/><path d="M430 432l95-72" stroke="#e4b23c" stroke-width="4"/><rect x="525" y="282" width="190" height="78" rx="18" fill="rgba(247,244,238,.88)"/><text x="620" y="314" text-anchor="middle" font-size="22" font-family="Inter" fill="#3f245d" font-weight="700">PROJECT SITE</text><text x="620" y="342" text-anchor="middle" font-size="16" font-family="Inter" fill="#6d5a86">Mahachai mangrove edge</text><circle cx="945" cy="214" r="96" fill="rgba(247,244,238,.82)"/><path d="M880 240C915 194 968 185 1015 210" fill="none" stroke="#3f245d" stroke-width="5"/><path d="M895 255C932 222 985 218 1030 238" fill="none" stroke="#e4b23c" stroke-width="5"/><text x="945" y="155" text-anchor="middle" font-size="15" font-family="Inter" fill="#3f245d" font-weight="700">SEA LEVEL RISE</text><text x="945" y="285" text-anchor="middle" font-size="13" font-family="Inter" fill="#6d5a86">higher tide + shoreline retreat</text><circle cx="185" cy="172" r="82" fill="rgba(247,244,238,.82)"/><path d="M130 205L240 140" stroke="#90c979" stroke-width="20"/><path d="M150 150H220M142 180H230" stroke="#3f245d" stroke-width="4" opacity=".55"/><text x="185" y="95" text-anchor="middle" font-size="15" font-family="Inter" fill="#3f245d" font-weight="700">AQUACULTURE</text><text x="42" y="88" font-size="34" font-family="Cormorant Garamond" fill="#f7f4ee" font-weight="700">Design and Improvement of Mahachai Mangrove</text><text x="42" y="128" font-size="18" font-family="Inter" fill="#f7f4ee">Mapping exposure, erosion, canals, ponds, and sediment opportunities.</text><rect width="1200" height="680" fill="url(#glow)"/></svg>`
+      },
+      {
+        title: "Adaptive Master Plan",
+        description: "The master plan organizes the coast as a sequence of protection, sediment capture, mangrove nursery, research walk, and community learning zones. Instead of a hard wall, the design uses soft thresholds so tides can enter, drop sediment, and support future mangrove colonization.",
+        image: `<svg class="coastal-svg" viewBox="0 0 1200 680" role="img" aria-labelledby="masterTitle"><title id="masterTitle">Master plan of sediment improvement zones</title><rect width="1200" height="680" fill="#eef0df"/><path d="M105 440C230 350 375 322 530 360 685 398 795 304 930 276 1018 258 1085 276 1130 314L1078 560C910 500 790 528 662 568 480 626 300 580 138 536Z" fill="#86b37b" stroke="#3f245d" stroke-width="4"/><path d="M140 510C300 560 455 582 640 526 782 482 930 438 1102 496" fill="none" stroke="#74aeb0" stroke-width="58" opacity=".85"/><path d="M155 492C310 538 460 548 632 497 778 454 930 409 1095 462" fill="none" stroke="#e4b23c" stroke-width="18" stroke-dasharray="1 24" stroke-linecap="round"/><path d="M210 392C304 360 418 365 505 392" fill="none" stroke="#2d6d4f" stroke-width="34" opacity=".75"/><path d="M560 393C675 385 768 330 890 310" fill="none" stroke="#f6e6b2" stroke-width="46" opacity=".95"/><path d="M270 468L365 424M430 506L530 449M730 474L820 420M900 452L1000 410" stroke="#6d5a86" stroke-width="8" stroke-linecap="round"/><g font-family="Inter" fill="#3f245d" font-size="18" font-weight="700"><text x="250" y="344">Mangrove preservation</text><text x="570" y="315">Nursery + learning walk</text><text x="830" y="265">Sediment park</text><text x="160" y="585">Bamboo jetty fields</text><text x="705" y="610">Future mudflat growth</text></g><g fill="#f7f4ee" stroke="#3f245d" stroke-width="3"><circle cx="262" cy="220" r="58"/><circle cx="580" cy="196" r="58"/><circle cx="890" cy="170" r="58"/></g><g font-family="Inter" fill="#3f245d" font-size="18" font-weight="700"><text x="262" y="226" text-anchor="middle">01</text><text x="580" y="202" text-anchor="middle">02</text><text x="890" y="176" text-anchor="middle">03</text></g><text x="60" y="78" font-size="38" font-family="Cormorant Garamond" fill="#3f245d" font-weight="700">Master plan: working with tide, mud, and mangrove succession</text></svg>`
+      },
+      {
+        title: "Sediment Improvement Tool Kit",
+        description: "The tool kit combines bamboo jetties, brushwood fences, porous traps, nursery planting, and monitoring stations. Each tool reduces wave energy at a different scale while allowing water to pass through, creating calmer pockets where suspended sediment can settle.",
+        image: `<svg class="coastal-svg" viewBox="0 0 1200 680" role="img" aria-labelledby="toolTitle"><title id="toolTitle">Diagram of landscape tools to improve sediment</title><rect width="1200" height="680" fill="#f7f4ee"/><text x="60" y="78" font-size="38" font-family="Cormorant Garamond" fill="#3f245d" font-weight="700">Sediment improvement tool kit</text><text x="62" y="112" font-size="18" font-family="Inter" fill="#6d5a86">Porous landscape infrastructure slows water, captures mud, and prepares mangrove habitat.</text><g transform="translate(70 170)"><rect width="300" height="190" rx="22" fill="#dfe7d0"/><path d="M30 135C85 110 150 160 220 120 250 104 272 105 292 112" fill="none" stroke="#74aeb0" stroke-width="18"/><g stroke="#8a5d33" stroke-width="8" stroke-linecap="round"><path d="M65 52V152M102 38V152M139 48V152M176 36V152M213 50V152"/><path d="M48 82H232M58 112H244"/></g><text x="150" y="236" text-anchor="middle" font-size="20" font-family="Inter" fill="#3f245d" font-weight="700">60° bamboo jetties</text></g><g transform="translate(450 170)"><rect width="300" height="190" rx="22" fill="#dfe7d0"/><path d="M20 138C82 102 142 158 202 124 238 104 270 112 290 130" fill="none" stroke="#74aeb0" stroke-width="18"/><g stroke="#8a5d33" stroke-width="6" stroke-linecap="round"><path d="M72 60L170 145M98 48L198 136M124 40L224 124"/><path d="M78 112L215 42M92 140L240 58"/></g><text x="150" y="236" text-anchor="middle" font-size="20" font-family="Inter" fill="#3f245d" font-weight="700">brushwood fences</text></g><g transform="translate(830 170)"><rect width="300" height="190" rx="22" fill="#dfe7d0"/><path d="M20 138C95 116 126 156 204 120 240 102 270 112 290 128" fill="none" stroke="#74aeb0" stroke-width="18"/><g fill="#2d6d4f"><circle cx="85" cy="105" r="20"/><circle cx="130" cy="85" r="24"/><circle cx="180" cy="112" r="22"/><circle cx="220" cy="84" r="18"/></g><g stroke="#3f245d" stroke-width="5"><path d="M85 124V150M130 108V150M180 132V150M220 101V150"/></g><text x="150" y="236" text-anchor="middle" font-size="20" font-family="Inter" fill="#3f245d" font-weight="700">mangrove nursery</text></g><g transform="translate(250 455)"><rect width="300" height="120" rx="22" fill="#fff8df"/><path d="M40 72H260" stroke="#e4b23c" stroke-width="10" stroke-linecap="round"/><circle cx="82" cy="72" r="18" fill="#74aeb0"/><circle cx="150" cy="72" r="18" fill="#74aeb0"/><circle cx="218" cy="72" r="18" fill="#74aeb0"/><text x="150" y="155" text-anchor="middle" font-size="20" font-family="Inter" fill="#3f245d" font-weight="700">sediment monitoring</text></g><g transform="translate(650 455)"><rect width="300" height="120" rx="22" fill="#fff8df"/><path d="M34 76C92 42 154 104 214 68 235 56 252 56 270 62" fill="none" stroke="#74aeb0" stroke-width="16"/><path d="M62 82H238" stroke="#8a5d33" stroke-width="8" stroke-dasharray="10 12"/><text x="150" y="155" text-anchor="middle" font-size="20" font-family="Inter" fill="#3f245d" font-weight="700">porous sediment traps</text></g></svg>`
+      },
+      {
+        title: "Isometric Bamboo Jetty Tool",
+        description: "This isometric view shows one sediment tool as a modular bamboo jetty set at an angle to the shoreline. The porous frame breaks wave force, slows the returning tide, and catches fine sediment behind the structure so planted mangrove seedlings have a more stable substrate.",
+        image: `<svg class="coastal-svg" viewBox="0 0 1200 680" role="img" aria-labelledby="isoTitle"><title id="isoTitle">Isometric bamboo jetty sediment tool</title><rect width="1200" height="680" fill="#f7f4ee"/><text x="60" y="78" font-size="38" font-family="Cormorant Garamond" fill="#3f245d" font-weight="700">Isometric detail: angled bamboo jetty</text><g transform="translate(270 150)"><path d="M150 330L520 130L850 290L480 500Z" fill="#74aeb0" opacity=".72"/><path d="M120 265L492 68L875 248L500 452Z" fill="#d9c7a0"/><path d="M210 268L492 118L778 248L498 404Z" fill="#466b45"/><g fill="#2d6d4f"><circle cx="325" cy="245" r="34"/><circle cx="390" cy="214" r="40"/><circle cx="455" cy="255" r="34"/><circle cx="548" cy="220" r="38"/><circle cx="622" cy="258" r="32"/></g><g stroke="#8a5d33" stroke-width="12" stroke-linecap="round"><path d="M435 100L435 365"/><path d="M482 82L482 385"/><path d="M529 102L529 405"/><path d="M576 124L576 424"/><path d="M623 146L623 442"/><path d="M386 182L650 306"/><path d="M388 236L650 360"/></g><g stroke="#e4b23c" stroke-width="5" stroke-linecap="round" opacity=".9"><path d="M180 468C260 420 335 475 418 430 492 390 548 402 610 438"/><path d="M210 505C300 456 375 510 462 464 532 428 596 434 680 476"/></g><path d="M690 130L790 178" stroke="#3f245d" stroke-width="4"/><text x="812" y="184" font-size="18" font-family="Inter" fill="#3f245d" font-weight="700">bamboo piles</text><path d="M690 345L808 404" stroke="#3f245d" stroke-width="4"/><text x="825" y="414" font-size="18" font-family="Inter" fill="#3f245d" font-weight="700">sediment pocket</text><path d="M288 180L184 130" stroke="#3f245d" stroke-width="4"/><text x="30" y="128" font-size="18" font-family="Inter" fill="#3f245d" font-weight="700">mangrove planting</text></g></svg>`
+      },
+      {
+        title: "Coastal Section and Future Sedimentation",
+        description: "The final image reads the project as a living section: existing settlement and mangrove preservation transition to nursery work, bamboo breakwaters, future mudflat accumulation, and offshore porous fences. Over time, the section anticipates a wider intertidal platform that can absorb water, hold sediment, and support biodiversity.",
+        image: `<svg class="coastal-svg" viewBox="0 0 1200 680" role="img" aria-labelledby="sectionTitle"><title id="sectionTitle">Coastal section showing future sedimentation</title><rect width="1200" height="680" fill="#f7f4ee"/><text x="60" y="78" font-size="38" font-family="Cormorant Garamond" fill="#3f245d" font-weight="700">Section: building a wider living coast</text><path d="M0 500C150 480 300 492 455 478 625 462 790 515 1200 482V680H0Z" fill="#34302b"/><path d="M0 444C160 420 350 432 520 428 710 424 900 466 1200 440V520H0Z" fill="#74aeb0" opacity=".85"/><path d="M0 410C170 390 340 400 525 394 720 388 930 420 1200 400" fill="none" stroke="#d35c4c" stroke-width="6"/><path d="M0 392C170 373 340 382 525 376 720 370 930 402 1200 382" fill="none" stroke="#e4b23c" stroke-width="6" stroke-dasharray="18 16"/><path d="M0 382C170 366 340 370 525 366 720 360 930 385 1200 368" fill="none" stroke="#3f245d" stroke-width="3" opacity=".6"/><g fill="#2d6d4f"><circle cx="110" cy="350" r="25"/><circle cx="156" cy="336" r="30"/><circle cx="205" cy="352" r="25"/><circle cx="252" cy="330" r="28"/></g><g stroke="#8a5d33" stroke-width="7"><path d="M478 366V445M506 362V448M535 365V450M564 370V452"/><path d="M462 395H582"/><path d="M840 382V456M870 378V458M900 382V460"/><path d="M825 410H918"/><path d="M1035 375V452M1062 373V452M1089 375V454"/><path d="M1022 402H1102"/></g><rect x="300" y="356" width="130" height="20" fill="#e4b23c"/><path d="M620 433C690 416 750 418 810 432" fill="none" stroke="#f6e6b2" stroke-width="22"/><g font-family="Inter" fill="#3f245d" font-size="16"><text x="70" y="575">Mangrove preservation & restoration</text><text x="330" y="575">Plant nursery</text><text x="470" y="575">Bamboo jetties</text><text x="655" y="575">Future sedimentation</text><text x="842" y="575">Porous fence breakwaters</text><text x="1018" y="575">Aquatic habitat</text></g><g font-family="Inter" fill="#6d5a86" font-size="15"><text x="990" y="330">Sea level rise in 2121</text><text x="990" y="354">Sea level rise in 2021</text><text x="990" y="378">New mud flat level</text><text x="990" y="402">Existing mudflat</text></g></svg>`
+      }
+    ];
+
+    let coastalCurrentSlide = 0;
+    const coastalImageFrame = document.getElementById("coastalImageFrame");
+    const coastalSlideNumber = document.getElementById("coastalSlideNumber");
+    const coastalSlideTitle = document.getElementById("coastalSlideTitle");
+    const coastalSlideDescription = document.getElementById("coastalSlideDescription");
+    const coastalThumbnailTrack = document.querySelector(".coastal-thumbnails");
+
+    function updateCoastalSlide() {
+      const slide = coastalSlides[coastalCurrentSlide];
+      coastalImageFrame.classList.remove("is-entering");
+      void coastalImageFrame.offsetWidth;
+      coastalImageFrame.innerHTML = slide.image;
+      coastalImageFrame.classList.add("is-entering");
+      coastalSlideNumber.textContent = String(coastalCurrentSlide + 1).padStart(2, "0") + " / " + coastalSlides.length;
+      coastalSlideTitle.textContent = slide.title;
+      coastalSlideDescription.textContent = slide.description;
+
+      document.querySelectorAll(".coastal-thumbnail-button").forEach(function (button, index) {
+        button.classList.toggle("active", index === coastalCurrentSlide);
+        button.setAttribute("aria-current", index === coastalCurrentSlide ? "true" : "false");
+      });
+    }
+
+    function buildCoastalThumbnails() {
+      coastalSlides.forEach(function (slide, index) {
+        const button = document.createElement("button");
+        button.className = "coastal-thumbnail-button";
+        button.type = "button";
+        button.setAttribute("aria-label", "Show image " + (index + 1) + ": " + slide.title);
+        button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><strong>${slide.title}</strong>`;
+        button.addEventListener("click", function () {
+          coastalCurrentSlide = index;
+          updateCoastalSlide();
+        });
+        coastalThumbnailTrack.appendChild(button);
+      });
+    }
+
+    document.querySelector(".coastal-slide-arrow-left").addEventListener("click", function () {
+      coastalCurrentSlide = coastalCurrentSlide === 0 ? coastalSlides.length - 1 : coastalCurrentSlide - 1;
+      updateCoastalSlide();
+    });
+
+    document.querySelector(".coastal-slide-arrow-right").addEventListener("click", function () {
+      coastalCurrentSlide = coastalCurrentSlide === coastalSlides.length - 1 ? 0 : coastalCurrentSlide + 1;
+      updateCoastalSlide();
+    });
+
+    buildCoastalThumbnails();
+    updateCoastalSlide();
+  </script>
+</body>
+</html>
