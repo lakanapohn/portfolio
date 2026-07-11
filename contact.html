@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Lakanapohn Sinparu for portfolio, collaboration, and academic project enquiries." />
 
   <title>Contact | Lakanapohn Sinparu</title>
 
@@ -11,9 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/cloudinary-config.js" defer></script>
+  <script src="assets/js/cloudinary.js" defer></script>
 </head>
 
 <body class="contact-locked">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page contact-page">
 
     <header class="topbar">
@@ -22,17 +26,17 @@
         <strong>Lakanapohn Sinparu</strong>
       </a>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Primary navigation">
         <a href="about.html">About</a>
         <a href="index.html">Work</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </header>
 
-    <main class="contact-main contact-main-with-image">
+    <main id="main-content" class="contact-main contact-main-with-image">
 
       <section class="contact-image">
-        <img src="images/VIENNA_IoT_explode.png" alt="Vienna IoT exploded diagram">
+        <img src="images/VIENNA_IoT_explode.png" data-cloudinary-public-id="" alt="Vienna IoT exploded diagram" loading="lazy" decoding="async">
       </section>
 
       <section class="contact-text">

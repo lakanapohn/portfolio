@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fading Colors cartographic design project about coral reef bleaching in Cuba." />
 
   <title>Fading Colors | Lakanapohn Sinparu</title>
 
@@ -11,9 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/cloudinary-config.js" defer></script>
+  <script src="assets/js/cloudinary.js" defer></script>
 </head>
 
 <body class="scroll-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page project-page">
 
     <header class="topbar">
@@ -22,14 +26,14 @@
         <strong>Lakanapohn Sinparu</strong>
       </a>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Primary navigation">
         <a href="about.html">About</a>
-        <a href="msc-work.html">Work</a>
+        <a href="msc-work.html" aria-current="page">Work</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="project-main">
+    <main id="main-content" class="project-main">
 
       <section class="project-intro">
         <p class="project-label">Group Work · Cartographic Design and Geomedia</p>
@@ -59,11 +63,11 @@
 
       <section class="paper-map-gallery">
         <figure class="paper-map-image">
-          <img src="images/cartographic/cuba-coral-map.jpg" alt="Cuba coral reef bleaching map">
+          <img src="images/cartographic/cuba-coral-map.jpg" data-cloudinary-public-id="" alt="Cuba coral reef bleaching map" loading="lazy" decoding="async">
         </figure>
 
         <figure class="paper-map-image">
-          <img src="images/cartographic/brochure.png" alt="Cartographic brochure about coral reef bleaching">
+          <img src="images/cartographic/brochure.png" data-cloudinary-public-id="" alt="Cartographic brochure about coral reef bleaching" loading="lazy" decoding="async">
         </figure>
       </section>
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bachelor’s thesis project on an urban agriculture learning center and community garden in Bangkok." />
 
   <title>Thesis Work | Lakanapohn Sinparu</title>
 
@@ -11,9 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/cloudinary-config.js" defer></script>
+  <script src="assets/js/cloudinary.js" defer></script>
 </head>
 
 <body class="scroll-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page thesis-page">
 
     <header class="topbar">
@@ -22,14 +26,14 @@
         <strong>Lakanapohn Sinparu</strong>
       </a>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Primary navigation">
         <a href="about.html">About</a>
-        <a href="landscape-work.html">Work</a>
+        <a href="landscape-work.html" aria-current="page">Work</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="thesis-main">
+    <main id="main-content" class="thesis-main">
 
       <section class="thesis-intro">
         <p class="project-label">Landscape Architecture</p>
@@ -54,7 +58,7 @@
             rel="noopener noreferrer"
             class="master-plan-link"
           >
-            <img id="thesisSlideImage" src="images/final-master plan_edit2024.png" alt="Master plan">
+            <img id="thesisSlideImage" src="images/final-master plan_edit2024.png" data-cloudinary-public-id="" alt="Master plan" decoding="async">
           </a>
         </div>
 
@@ -64,7 +68,7 @@
 
       </section>
 
-      <section class="slide-caption">
+      <section class="slide-caption" aria-live="polite">
         <p id="slideNumber">01 / 11</p>
         <h2 id="slideTitle">Master Plan</h2>
         <p id="slideDescription">
