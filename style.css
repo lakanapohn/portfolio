@@ -1528,6 +1528,67 @@ body.lightbox-open {
   }
 }
 
+
+.lightbox-image-stage {
+  width: min(94vw, 1400px);
+  height: min(78vh, 820px);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  touch-action: none;
+}
+
+.lightbox-image-stage img {
+  transform-origin: center center;
+  transition: transform 0.12s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-controls {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.lightbox-controls button,
+.lightbox-controls span {
+  min-height: 40px;
+  border: 1px solid var(--purple);
+  border-radius: 999px;
+  background: rgba(247, 244, 238, 0.92);
+  color: var(--purple);
+  font: 600 0.9rem/1 "Inter", sans-serif;
+}
+
+.lightbox-controls button {
+  min-width: 44px;
+  cursor: pointer;
+}
+
+.lightbox-controls span {
+  display: grid;
+  place-items: center;
+  max-width: min(46vw, 420px);
+  padding: 0 16px;
+}
+
+@media (max-width: 850px) {
+  .lightbox-controls {
+    top: auto;
+    bottom: 24px;
+  }
+
+  .lightbox-image-stage {
+    height: 70vh;
+  }
+}
+
 /* COASTAL SEDIMENT IMPROVEMENT PAGE */
 
 .coastal-page {
@@ -1575,11 +1636,15 @@ body.lightbox-open {
 
 .coastal-slide-card {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .coastal-image-frame {
+  position: relative;
+  order: -1;
   width: 100%;
-  min-height: min(58vh, 640px);
+  height: min(62vh, 620px);
   border: 1px solid rgba(63, 36, 93, 0.14);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.35);
@@ -1587,15 +1652,22 @@ body.lightbox-open {
   box-shadow: 0 24px 60px rgba(63, 36, 93, 0.1);
 }
 
+.coastal-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 28px;
+  cursor: zoom-in;
+}
+
 .coastal-image-frame.is-entering {
   animation: coastalSlideIn 0.38s ease both;
 }
 
-.coastal-svg {
-  width: 100%;
-  height: 100%;
-  min-height: min(58vh, 640px);
-  display: block;
+.coastal-image-frame .zoom-button {
+  right: 18px;
+  bottom: 18px;
 }
 
 .coastal-slide-arrow {
@@ -1732,8 +1804,13 @@ body.lightbox-open {
     font-size: 3.5rem;
   }
 
-  .coastal-image-frame,
-  .coastal-svg {
+  .coastal-image-frame {
+    height: auto;
+    min-height: 340px;
+  }
+
+  .coastal-image-frame img {
+    height: auto;
     min-height: 340px;
   }
 
