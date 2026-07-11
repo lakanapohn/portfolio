@@ -52,7 +52,7 @@
 
         <div class="slide-image-wrap">
           <button id="slideZoomTrigger" class="slide-zoom-trigger" type="button" aria-label="Open Master Plan in zoom viewer">
-            <img id="thesisSlideImage" src="images/final-master plan_edit2024.png" data-cloudinary-public-id="final-master_plan_edit2024_oddze0" alt="Master plan" decoding="async">
+            <img id="thesisSlideImage" src="https://res.cloudinary.com/ngg4n92q/image/upload/f_auto,q_auto,c_limit,w_1600/final-master_plan_edit2024_oddze0" data-cloudinary-public-id="final-master_plan_edit2024_oddze0" alt="Master plan" decoding="async">
             <span class="zoom-hint">Click to zoom</span>
           </button>
         </div>
@@ -86,78 +86,135 @@
       <button id="zoomInButton" type="button" aria-label="Zoom in">+</button>
     </div>
     <div id="lightboxViewport" class="lightbox-viewport">
-      <img id="lightboxImage" src="images/final-master plan_edit2024.png" alt="Master plan">
+      <img id="lightboxImage" src="https://res.cloudinary.com/ngg4n92q/image/upload/f_auto,q_auto,c_limit,w_1600/final-master_plan_edit2024_oddze0" data-cloudinary-public-id="final-master_plan_edit2024_oddze0" alt="Master plan">
     </div>
     <p id="lightboxTitle" class="lightbox-title">Master Plan</p>
     <p class="lightbox-help">Scroll or use + / − to zoom. Drag the image to pan around the plan.</p>
   </div>
 
   <script>
+    const cloudinaryConfig = Object.assign({ cloudName: "ngg4n92q", widths: [480, 800, 1200, 1600] }, window.PORTFOLIO_CLOUDINARY || {});
+    const cloudinaryWidths = Array.isArray(cloudinaryConfig.widths) && cloudinaryConfig.widths.length
+      ? cloudinaryConfig.widths
+      : [480, 800, 1200, 1600];
+    const largestCloudinaryWidth = Math.max.apply(null, cloudinaryWidths);
+
+    function encodeCloudinaryPublicId(publicId) {
+      return publicId
+        .split("/")
+        .map(function (part) {
+          return encodeURIComponent(part);
+        })
+        .join("/");
+    }
+
+    function buildCloudinaryUrl(publicId, width) {
+      if (!cloudinaryConfig.cloudName || cloudinaryConfig.cloudName === "REPLACE_WITH_CLOUD_NAME") {
+        return "";
+      }
+
+      return "https://res.cloudinary.com/" +
+        encodeURIComponent(cloudinaryConfig.cloudName.trim()) +
+        "/image/upload/f_auto,q_auto,c_limit,w_" +
+        width +
+        "/" +
+        encodeCloudinaryPublicId(publicId);
+    }
+
+    function getSlideImageUrl(slide, width) {
+      return buildCloudinaryUrl(slide.cloudinaryPublicId, width || largestCloudinaryWidth) || slide.fallbackImage;
+    }
+
+    function applySlideImage(image, slide, width) {
+      const src = getSlideImageUrl(slide, width);
+      image.src = src;
+      image.alt = slide.alt;
+      image.setAttribute("data-cloudinary-public-id", slide.cloudinaryPublicId);
+
+      if (cloudinaryConfig.cloudName && cloudinaryConfig.cloudName !== "REPLACE_WITH_CLOUD_NAME") {
+        image.srcset = cloudinaryWidths
+          .map(function (cloudinaryWidth) {
+            return buildCloudinaryUrl(slide.cloudinaryPublicId, cloudinaryWidth) + " " + cloudinaryWidth + "w";
+          })
+          .join(", ");
+        image.sizes = image.sizes || "(max-width: 850px) calc(100vw - 52px), 1100px";
+      }
+    }
+
     const slides = [
       {
-    //image: "images/final-master plan_edit2024.png",
-    <img id="thesisSlideImage" src="images/final-master plan_edit2024.png" data-cloudinary-public-id="final-master_plan_edit2024_oddze0" alt="Master plan" decoding="async">
-    //alt: "Master plan",
-    //title: "Master Plan",
-    //description: "This thesis addresses food security in Thawiwatthana, Bangkok, by transforming abandoned urban land, formerly rice fields and gardens, into a learning center and community garden. The project reconnects the community with its agricultural heritage and promotes sustainable local food production. It highlights the importance of urban agriculture in enhancing food security and sustainable living."
-    },
-      {
-        <img id="thesisSlideImage2" src="images/iso plaza zone.png" data-cloudinary-public-id="iso_plaza_zone_bqdbwj" alt="Public and recreation zone - plaza iso plan" decoding="async">
-        //image: "images/iso plaza zone.png",
-        //alt: "Public and recreation zone - plaza iso plan",
-        //title: "Public and Recreation Zone — Plaza",
-        //description: "Isometric plan of the plaza area, designed as a flexible public space for gathering, recreation, and community activities."
+        cloudinaryPublicId: "final-master_plan_edit2024_oddze0",
+        fallbackImage: "assets/images/final-master plan_edit2024.png",
+        alt: "Master plan",
+        title: "Master Plan",
+        description: "This thesis addresses food security in Thawiwatthana, Bangkok, by transforming abandoned urban land, formerly rice fields and gardens, into a learning center and community garden. The project reconnects the community with its agricultural heritage and promotes sustainable local food production. It highlights the importance of urban agriculture in enhancing food security and sustainable living."
       },
       {
-        image: "images/iso-cafe.png",
+        cloudinaryPublicId: "iso_plaza_zone_bqdbwj",
+        fallbackImage: "assets/images/iso plaza zone.png",
+        alt: "Public and recreation zone - plaza iso plan",
+        title: "Public and Recreation Zone — Plaza",
+        description: "Isometric plan of the plaza area, designed as a flexible public space for gathering, recreation, and community activities."
+      },
+      {
+        cloudinaryPublicId: "iso-cafe",
+        fallbackImage: "assets/images/iso-cafe.png",
         alt: "Public and recreation zone - cafe",
         title: "Public and Recreation Zone — Cafe",
         description: "Cafe zone connected to the public landscape, supporting social interaction, resting areas, and everyday use of the site."
       },
       {
-        image: "images/iso-lc.png",
+        cloudinaryPublicId: "iso-lc",
+        fallbackImage: "assets/images/iso-lc.png",
         alt: "Learning center zone",
         title: "Learning Center Zone",
         description: "A learning area designed to support education, workshops, and knowledge exchange related to landscape, agriculture, and community activities."
       },
       {
-        image: "images/iso-community-garden.png",
+        cloudinaryPublicId: "iso-community-garden",
+        fallbackImage: "assets/images/iso-community-garden.png",
         alt: "Community garden zone",
         title: "Community Garden Zone",
         description: "Community garden area for local participation, small-scale planting, and shared productive landscape activities."
       },
       {
-        image: "images/iso-integrated-farm.png",
+        cloudinaryPublicId: "iso-integrated-farm",
+        fallbackImage: "assets/images/iso-integrated-farm.png",
         alt: "Community support agriculture zone - integrated farm",
         title: "Community Supported Agriculture — Integrated Farm",
         description: "Integrated farming zone combining productive landscape systems with community-supported agricultural activities."
       },
       {
-        image: "images/iso-rent.png",
+        cloudinaryPublicId: "iso-rent",
+        fallbackImage: "assets/images/iso-rent.png",
         alt: "Productive urban agriculture zone",
         title: "Productive Urban Agriculture Zone",
         description: "Productive planting area that supports urban agriculture, food production, and flexible use by local users."
       },
       {
-        image: "images/iso-orchard.png",
+        cloudinaryPublicId: "iso-orchard",
+        fallbackImage: "assets/images/iso-orchard.png",
         alt: "Community support agriculture zone - mixed orchard",
         title: "Community Supported Agriculture — Mixed Orchard",
         description: "Mixed orchard zone designed for diverse fruit planting, seasonal production, and ecological value."
       },
       {
-        image: "images/iso-agro.png",
+        cloudinaryPublicId: "iso-agro",
+        fallbackImage: "assets/images/iso-agro.png",
         alt: "Community support agriculture zone - agroforestry",
         title: "Community Supported Agriculture — Agroforestry",
         description: "Agroforestry zone integrating trees, crops, and ecological planting strategies to support productive and resilient landscapes."
       },
       {
-        image: "images/iso-resevoir.png",
+        cloudinaryPublicId: "iso-resevoir",
+        fallbackImage: "assets/images/iso-resevoir.png",
         alt: "Reservoir zone",
         title: "Reservoir Zone",
         description: "Reservoir area designed as part of the site’s water management system, supporting landscape function and environmental quality."
       },
       {
-        image: "images/iso-boh.png",
+        cloudinaryPublicId: "iso-boh",
+        fallbackImage: "assets/images/iso-boh.png",
         alt: "Back of house zone",
         title: "Back of House Zone",
         description: "Service and support area for site operation, maintenance, storage, and practical landscape management."
@@ -193,15 +250,11 @@
 
     function updateSlide() {
       const slide = slides[currentSlide];
-
-      slideImage.src = slide.image;
-      slideImage.alt = slide.alt;
-
+      applySlideImage(slideImage, slide);
       slideNumber.textContent = String(currentSlide + 1).padStart(2, "0") + " / " + slides.length;
       slideTitle.textContent = slide.title;
       slideDescription.textContent = slide.description;
       slideZoomTrigger.setAttribute("aria-label", "Open " + slide.title + " in zoom viewer");
-
       document.querySelectorAll(".thumbnail-button").forEach(function (button, index) {
         button.classList.toggle("active", index === currentSlide);
         button.setAttribute("aria-current", index === currentSlide ? "true" : "false");
@@ -211,10 +264,17 @@
     function buildThumbnails() {
       slides.forEach(function (slide, index) {
         const button = document.createElement("button");
+        const image = document.createElement("img");
+        const label = document.createElement("span");
         button.className = "thumbnail-button";
         button.type = "button";
         button.setAttribute("aria-label", "Show slide " + (index + 1) + ": " + slide.title);
-        button.innerHTML = '<img src="' + slide.image + '" alt="" loading="lazy"><span>' + String(index + 1).padStart(2, "0") + '</span>';
+        image.alt = "";
+        image.loading = "lazy";
+        applySlideImage(image, slide, 480);
+        label.textContent = String(index + 1).padStart(2, "0");
+        button.appendChild(image);
+        button.appendChild(label);
         button.addEventListener("click", function () {
           currentSlide = index;
           updateSlide();
@@ -246,8 +306,7 @@
 
     function openLightbox() {
       const slide = slides[currentSlide];
-      lightboxImage.src = slide.image;
-      lightboxImage.alt = slide.alt;
+      applySlideImage(lightboxImage, slide);
       lightboxTitle.textContent = slide.title;
       lightbox.classList.add("active");
       lightbox.setAttribute("aria-hidden", "false");
