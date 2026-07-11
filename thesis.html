@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thesis Work | Lakanapohn Sinparu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="scroll-page">
+  <div class="page thesis-page">
+
+    <header class="topbar">
+      <a href="index.html" class="top-left-brand">
+        <span>Portfolio</span>
+        <strong>Lakanapohn Sinparu</strong>
+      </a>
+
+      <nav class="menu">
+        <a href="about.html">About</a>
+        <a href="landscape-work.html">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="thesis-main">
+
+      <section class="thesis-intro">
+        <p class="project-label">Landscape Architecture</p>
+
+        <h1>
+            Bachelor’s Thesis: Urban Agriculture Learning Center and Community Garden
+            for Food Security in Thawiwatthana, Bangkok
+        </h1>
+        </section>
+
+      <section class="thesis-slideshow">
+
+        <button class="slide-arrow slide-arrow-left" type="button" aria-label="Previous slide">
+          ‹
+        </button>
+
+        <div class="slide-image-wrap">
+          <a
+            id="masterPlanLink"
+            href="images/final-master plan_edit2024.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="master-plan-link"
+          >
+            <img id="thesisSlideImage" src="images/final-master plan_edit2024.png" alt="Master plan">
+          </a>
+        </div>
+
+        <button class="slide-arrow slide-arrow-right" type="button" aria-label="Next slide">
+          ›
+        </button>
+
+      </section>
+
+      <section class="slide-caption">
+        <p id="slideNumber">01 / 11</p>
+        <h2 id="slideTitle">Master Plan</h2>
+        <p id="slideDescription">
+          Overall master plan showing the spatial organization, main program areas, circulation,
+          and landscape structure of the thesis project.
+        </p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    const slides = [
+      {
+    image: "images/final-master plan_edit2024.png",
+    alt: "Master plan",
+    title: "Master Plan",
+    description: "This thesis addresses food security in Thawiwatthana, Bangkok, by transforming abandoned urban land, formerly rice fields and gardens, into a learning center and community garden. The project reconnects the community with its agricultural heritage and promotes sustainable local food production. It highlights the importance of urban agriculture in enhancing food security and sustainable living."
+    },
+      {
+        image: "images/iso plaza zone.png",
+        alt: "Public and recreation zone - plaza iso plan",
+        title: "Public and Recreation Zone — Plaza",
+        description: "Isometric plan of the plaza area, designed as a flexible public space for gathering, recreation, and community activities."
+      },
+      {
+        image: "images/iso-cafe.png",
+        alt: "Public and recreation zone - cafe",
+        title: "Public and Recreation Zone — Cafe",
+        description: "Cafe zone connected to the public landscape, supporting social interaction, resting areas, and everyday use of the site."
+      },
+      {
+        image: "images/iso-lc.png",
+        alt: "Learning center zone",
+        title: "Learning Center Zone",
+        description: "A learning area designed to support education, workshops, and knowledge exchange related to landscape, agriculture, and community activities."
+      },
+      {
+        image: "images/iso-community-garden.png",
+        alt: "Community garden zone",
+        title: "Community Garden Zone",
+        description: "Community garden area for local participation, small-scale planting, and shared productive landscape activities."
+      },
+      {
+        image: "images/iso-integrated-farm.png",
+        alt: "Community support agriculture zone - integrated farm",
+        title: "Community Supported Agriculture — Integrated Farm",
+        description: "Integrated farming zone combining productive landscape systems with community-supported agricultural activities."
+      },
+      {
+        image: "images/iso-rent.png",
+        alt: "Productive urban agriculture zone",
+        title: "Productive Urban Agriculture Zone",
+        description: "Productive planting area that supports urban agriculture, food production, and flexible use by local users."
+      },
+      {
+        image: "images/iso-orchard.png",
+        alt: "Community support agriculture zone - mixed orchard",
+        title: "Community Supported Agriculture — Mixed Orchard",
+        description: "Mixed orchard zone designed for diverse fruit planting, seasonal production, and ecological value."
+      },
+      {
+        image: "images/iso-agro.png",
+        alt: "Community support agriculture zone - agroforestry",
+        title: "Community Supported Agriculture — Agroforestry",
+        description: "Agroforestry zone integrating trees, crops, and ecological planting strategies to support productive and resilient landscapes."
+      },
+      {
+        image: "images/iso-resevoir.png",
+        alt: "Reservoir zone",
+        title: "Reservoir Zone",
+        description: "Reservoir area designed as part of the site’s water management system, supporting landscape function and environmental quality."
+      },
+      {
+        image: "images/iso-boh.png",
+        alt: "Back of house zone",
+        title: "Back of House Zone",
+        description: "Service and support area for site operation, maintenance, storage, and practical landscape management."
+      }
+    ];
+
+    let currentSlide = 0;
+
+    const slideImage = document.getElementById("thesisSlideImage");
+    const masterPlanLink = document.getElementById("masterPlanLink");
+    const slideNumber = document.getElementById("slideNumber");
+    const slideTitle = document.getElementById("slideTitle");
+    const slideDescription = document.getElementById("slideDescription");
+
+    const previousButton = document.querySelector(".slide-arrow-left");
+    const nextButton = document.querySelector(".slide-arrow-right");
+
+    function updateSlide() {
+      const slide = slides[currentSlide];
+
+      slideImage.src = slide.image;
+      slideImage.alt = slide.alt;
+
+      slideNumber.textContent = String(currentSlide + 1).padStart(2, "0") + " / " + slides.length;
+      slideTitle.textContent = slide.title;
+      slideDescription.textContent = slide.description;
+
+      if (currentSlide === 0) {
+        masterPlanLink.href = slides[0].image;
+        masterPlanLink.style.pointerEvents = "auto";
+        masterPlanLink.style.cursor = "zoom-in";
+        slideImage.style.cursor = "zoom-in";
+        masterPlanLink.classList.add("is-clickable");
+      } else {
+        masterPlanLink.removeAttribute("href");
+        masterPlanLink.style.pointerEvents = "none";
+        masterPlanLink.style.cursor = "default";
+        slideImage.style.cursor = "default";
+        masterPlanLink.classList.remove("is-clickable");
+      }
+    }
+
+    previousButton.addEventListener("click", function () {
+      currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+      updateSlide();
+    });
+
+    nextButton.addEventListener("click", function () {
+      currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+      updateSlide();
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
