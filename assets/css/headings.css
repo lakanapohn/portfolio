@@ -1,0 +1,12 @@
+/* Shared handwritten headings, matching the portfolio name. */
+:root { --heading-font: "Caveat", cursive; }
+h1, h2, h3, h4, .work-item p, .sub-work-item p,
+.bsc-program dt, .bip-note-title, .carto-subtitle,
+.solar-location, .radar-subtitle, .radar-storymap-subtitle, .past-subtitle {
+  font-family: var(--heading-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: normal !important;
+}
+h1:not(.name-block h1), h2, h3, h4 { line-height: 1.15 !important; }
+.work-item p, .sub-work-item p { line-height: 1.15; }
+.carto-hero h1 em { font-style: normal; font-weight: inherit; }
