@@ -1,0 +1,19 @@
+
+.past-project-page { padding-bottom:80px; }
+.past-subtitle { font:500 clamp(1.5rem,2.5vw,2rem)/1.2 "Cormorant Garamond",serif; color:var(--purple-soft); margin:18px 0 0; }
+.past-company-link { display:inline-flex; gap:16px; align-items:center; color:var(--purple); font-size:.83rem; line-height:1.7; margin-top:12px; text-decoration:underline; text-underline-offset:5px; }
+.past-page .past-first-section { margin-top:48px; }
+.past-diagram-pair { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.past-diagram-pair .coastal-open-image { height:330px; display:flex; align-items:center; }
+.past-diagram-pair .coastal-open-image img { height:100%; object-fit:contain; }
+.past-model-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.past-model-grid .coastal-open-image { height:390px; }
+.past-model-grid .coastal-open-image img { height:100%; object-fit:contain; }
+.past-board-button { display:inline-flex; align-items:center; gap:18px; margin-top:28px; padding:12px 18px; border:1px solid var(--line); border-radius:999px; background:transparent; color:var(--purple); font:500 .8rem/1.5 "Inter",sans-serif; cursor:zoom-in; }
+.past-board-button:hover { border-color:var(--purple); }
+.past-board-button:focus-visible { outline:2px solid var(--purple); outline-offset:4px; }
+.past-credit { margin-top:60px; padding-top:24px; border-top:1px solid var(--line); color:var(--purple-soft); font-size:.78rem; line-height:1.8; }
+.past-credit a { color:inherit; text-underline-offset:4px; }
+@media(max-width:850px) { .past-model-grid { grid-template-columns:1fr; } .past-model-grid .coastal-open-image { height:auto; } .past-model-grid .coastal-open-image img { max-height:650px; } }
+@media(max-width:560px) { .past-diagram-pair { grid-template-columns:1fr; } .past-diagram-pair .coastal-open-image { height:auto; } .past-diagram-pair .coastal-open-image img { height:auto; } .past-company-link { align-items:flex-start; } }
+.past-page .coastal-intro .past-subtitle { font-size:clamp(1.5rem,2.5vw,2rem); }

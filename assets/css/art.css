@@ -1,0 +1,28 @@
+.art-page .project-main { max-width: 1100px; margin: 0 auto; }
+.art-gallery { columns: 3; column-gap: 32px; }
+.art-piece { break-inside: avoid; margin: 0 0 36px; }
+.art-image-link { display: block; position: relative; overflow: hidden; border-radius: 14px; background: var(--yellow-soft); }
+.art-image-link img { display: block; width: 100%; height: auto; }
+.art-view-hint { position: absolute; right: 12px; bottom: 12px; padding: 7px 12px; border-radius: 999px; background: var(--bg); color: var(--purple); font-size: .72rem; opacity: 0; transition: opacity .2s; }
+.art-image-link:hover .art-view-hint, .art-image-link:focus-visible .art-view-hint { opacity: 1; }
+.art-piece figcaption { margin-top: 12px; color: var(--purple-soft); font-size: .82rem; line-height: 1.5; }
+.art-viewer { width: min(1200px, calc(100vw - 32px)); max-width: none; height: calc(100dvh - 32px); max-height: none; margin: auto; padding: 20px 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--bg); color: var(--purple); }
+.art-viewer[open] { display: flex; flex-direction: column; }
+.art-viewer::backdrop { background: rgba(25, 15, 37, .82); }
+.art-viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.art-viewer h2 { font: 600 1.6rem/1.2 "Cormorant Garamond", serif; margin: 0; }
+.art-viewer button { border: 1px solid var(--line); border-radius: 50%; width: 44px; height: 44px; background: transparent; color: var(--purple); cursor: pointer; font-size: 1.6rem; flex-shrink: 0; }
+.art-viewer button:hover { background: var(--yellow-soft); }
+.art-viewer-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 18px 0; }
+.art-viewer-stage img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.art-viewer-controls { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.art-viewer-count { min-width: 48px; text-align: center; font-size: .8rem; color: var(--purple-soft); }
+html:has(.art-viewer[open]), body:has(.art-viewer[open]) { overflow: hidden; }
+@media (max-width: 850px) { .art-gallery { columns: 2; column-gap: 24px; } }
+@media (max-width: 560px) {
+  .art-gallery { columns: 1; }
+  .art-piece { margin-bottom: 30px; }
+  .art-viewer { padding: 16px; }
+  .art-view-hint { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .art-view-hint { transition: none; } }

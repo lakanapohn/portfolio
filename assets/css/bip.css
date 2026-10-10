@@ -1,0 +1,16 @@
+.bip-project-page { padding-bottom:90px; }
+.bip-subtitle { color:var(--purple-soft); font-size:.9rem; line-height:1.75; margin:24px auto 0; }
+.bip-posters { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
+.bip-posters .coastal-open-image { height:680px; }
+.bip-posters .coastal-open-image img { height:100%; object-fit:contain; }
+.bip-culture { display:grid; grid-template-columns:1fr 1.1fr; gap:52px; align-items:center; }
+.bip-culture > div > p:not(.project-label) { color:var(--purple-soft); font-size:.93rem; line-height:1.85; }
+.bip-culture .bsc-figure { margin-top:0; }
+.bip-course-link { display:inline-flex; gap:14px; text-decoration:none; align-items:center; }
+.bip-note-title { font:600 1.6rem/1.2 "Cormorant Garamond",serif; margin:24px 0 12px; }
+.bip-field-topics { margin-top:32px; padding:20px 24px; border:1px solid var(--line); border-radius:12px; color:var(--purple-soft); }
+.bip-field-topics summary { color:var(--purple); cursor:pointer; font-size:.9rem; }
+.bip-field-topics .bsc-program { margin-top:20px; }
+.bip-field-topics .bsc-program dt { border-left:0; padding-left:0; }
+@media(max-width:850px) { .bip-culture { grid-template-columns:1fr; gap:28px; } .bip-posters .coastal-open-image { height:500px; } }
+@media(max-width:560px) { .bip-posters { grid-template-columns:1fr; gap:30px; } .bip-posters .coastal-open-image { height:auto; } .bip-posters .coastal-open-image img { height:auto; } }

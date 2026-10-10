@@ -1,0 +1,5 @@
+.sub-work-row.landscape-grid { justify-items:center; grid-template-columns:repeat(5,minmax(0,1fr)); gap:clamp(16px,2.5vw,36px); }
+.landscape-grid .sub-work-item { width:min(100%,220px); }
+.landscape-grid .sub-work-circle { width:clamp(125px,13vw,180px); height:clamp(125px,13vw,180px); }
+@media(max-width:950px) { .sub-work-row.landscape-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:38px; } }
+@media(max-width:560px) { .sub-work-row.landscape-grid { grid-template-columns:1fr; } }

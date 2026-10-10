@@ -12,11 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/cartography.css" />
+  <script src="assets/js/cartography.js" defer></script>
   <script src="assets/js/cloudinary-config.js" defer></script>
   <script src="assets/js/cloudinary.js" defer></script>
 </head>
 
-<body class="scroll-page">
+<body class="scroll-page carto-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page project-page">
 
@@ -28,55 +30,65 @@
 
       <nav class="menu" aria-label="Primary navigation">
         <a href="about.html">About</a>
-        <a href="msc-work.html" aria-current="page">Work</a>
+        <a href="index.html" aria-current="page">Work</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <main id="main-content" class="project-main">
+      <a class="work-back" href="msc-work.html"><span aria-hidden="true">←</span><span>Back to Geoinformatics</span></a>
 
-      <section class="project-intro">
-        <p class="project-label">Group Work · Cartographic Design and Geomedia</p>
-
-        <h1>Fading Colors — Coral Reef Bleaching in Cuba</h1>
-
-        <p>
-          This group project explores coral reef bleaching in Cuba through cartographic storytelling.
-          The work combines thematic mapping, visual design, and geomedia to communicate how coral reef
-          ecosystems are affected by environmental stress.
-        </p>
-
-        <p>
-          The project includes an ArcGIS StoryMap and printed map materials designed to present the topic
-          clearly for a wider audience.
-        </p>
-
-        <a
-          class="storymap-link"
-          href="https://storymaps.arcgis.com/stories/35417dfdc6924650bda55f6ba6e1d99a"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open StoryMap →
-        </a>
-      </section>
-
-      <section class="paper-map-gallery">
-        <figure class="paper-map-image">
-          <img src="images/cartographic/cuba-coral-map.jpg" data-cloudinary-public-id="cuba-coral-map_vp4ccm" alt="Cuba coral reef bleaching map" loading="lazy" decoding="async">
-        </figure>
-
-        <figure class="paper-map-image">
-          <img src="images/cartographic/brochure.png" data-cloudinary-public-id="brochure_jm21ch" alt="Cartographic brochure about coral reef bleaching" loading="lazy" decoding="async">
+      <section class="carto-hero" aria-labelledby="carto-title">
+        <div class="carto-hero-copy">
+          <p class="carto-eyebrow">Cartographic Design &amp; Geomedia</p>
+          <h1 id="carto-title">Fading<br><em>Colors</em><span class="carto-title-dot" aria-hidden="true">.</span></h1>
+          <p class="carto-subtitle">Coral reef bleaching in Cuba</p>
+          <p class="carto-summary">A cartographic story about Cuba’s coral reefs, bringing together thematic maps, visual storytelling, and printed design.</p>
+          <div class="carto-actions">
+            <a class="carto-button" href="https://storymaps.arcgis.com/stories/35417dfdc6924650bda55f6ba6e1d99a" target="_blank" rel="noopener noreferrer">Explore the StoryMap <span aria-hidden="true">↗</span></a>
+            <a class="carto-text-link" href="#reef-map">See the map <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="carto-meta"><span>Group project</span><span>Cuba · Caribbean</span><span>Digital &amp; print</span></div>
+        </div>
+        <figure class="carto-hero-art">
+          <div class="carto-print-stage">
+            <span class="carto-stage-label">From map to print</span>
+            <a class="carto-artwork" href="https://res.cloudinary.com/ngg4n92q/image/upload/f_auto,q_auto,w_2400/brochure_jm21ch" data-title="Corals of Cuba — printed brochure" aria-label="View the Corals of Cuba brochure full size">
+              <img src="assets/images/cartographic/brochure.png" data-cloudinary-public-id="brochure_jm21ch" alt="Printed Corals of Cuba brochure shown in front of the turquoise coral reef map" width="1600" height="1202" sizes="(max-width: 850px) calc(100vw - 32px), 600px" loading="eager" decoding="async">
+              <span class="carto-enlarge" aria-hidden="true">View details ↗</span>
+            </a>
+          </div>
+          <figcaption>The story takes shape as a printed map and brochure.</figcaption>
         </figure>
       </section>
 
-        <a href="spatial-analysis.html" class="next-work-arrow" aria-label="Go to Spatial Analysis work">
-            <span>Spatial Analysis</span>
-            <strong>›</strong>
-        </a>
+      <section class="carto-context" aria-labelledby="carto-context-title">
+        <p class="carto-eyebrow">The project</p>
+        <div><h2 id="carto-context-title">Making an environmental<br>story visible.</h2><p>This group project explores coral reef bleaching in Cuba through cartographic storytelling. The map places reef locations in their coastal context, while the brochure introduces bleaching and reef protection to a wider audience.</p></div>
+      </section>
+
+      <section id="reef-map" class="carto-map-section" aria-labelledby="reef-map-title">
+        <div class="carto-section-heading"><div><p class="carto-eyebrow">The cartographic piece</p><h2 id="reef-map-title">Cuba’s coral reefs</h2></div><span class="carto-small-note">Explore the coastline, one detail at a time.</span></div>
+        <figure class="carto-map">
+          <a class="carto-artwork" href="https://res.cloudinary.com/ngg4n92q/image/upload/f_auto,q_auto,w_2400/cuba-coral-map_vp4ccm" data-title="Cuba’s coral reefs — thematic map" aria-label="View Cuba’s coral reef map full size">
+            <img src="assets/images/cartographic/cuba-coral-map.jpg" data-cloudinary-public-id="cuba-coral-map_vp4ccm" alt="Turquoise thematic map of Cuba showing coral reefs, bleaching alert zones, and circular coastal detail maps" width="1600" height="1131" sizes="(max-width: 850px) calc(100vw - 32px), 1100px" loading="lazy" decoding="async">
+            <span class="carto-enlarge" aria-hidden="true">Open full-size map ↗</span>
+          </a>
+          <figcaption><span>Coral reefs, coastal locations, and bleaching alert zones, with circular insets for a closer look.</span><span>Group cartographic work</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="carto-story" aria-labelledby="carto-story-title">
+        <div class="carto-story-copy"><p class="carto-eyebrow">Continue the story</p><h2 id="carto-story-title">One landscape.<br>Two ways to explore.</h2><p>The printed pieces offer an overview. The ArcGIS StoryMap brings the maps and narrative together in an interactive reading experience.</p><a class="carto-button" href="https://storymaps.arcgis.com/stories/35417dfdc6924650bda55f6ba6e1d99a" target="_blank" rel="noopener noreferrer">Read Fading Colors <span aria-hidden="true">↗</span></a></div>
+        <div class="carto-formats"><div><span class="carto-format-icon" aria-hidden="true">↗</span><h3>Digital storytelling</h3><p>Maps and narrative presented through ArcGIS StoryMaps.</p></div><div><span class="carto-format-icon" aria-hidden="true">▤</span><h3>Printed geomedia</h3><p>A thematic map and brochure designed to carry the story beyond the screen.</p></div></div>
+      </section>
     </main>
 
   </div>
+  <dialog class="carto-viewer" aria-labelledby="carto-viewer-title">
+    <div class="carto-viewer-bar"><h2 id="carto-viewer-title"></h2><button type="button" aria-label="Close image viewer">×</button></div>
+    <div class="carto-viewer-stage"><img alt=""></div>
+    <a class="carto-view-original" target="_blank" rel="noopener noreferrer">Open image in a new tab ↗</a>
+  </dialog>
 </body>
 </html>

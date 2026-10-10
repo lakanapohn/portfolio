@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Coastal sediment improvement landscape architecture project for Samut Sakhon, Thailand, with sea level rise mapping, master planning, and sediment restoration tools." />
-
-  <title>Coastal Sediment Improvement | Lakanapohn Sinparu</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-  <script src="assets/js/cloudinary-config.js" defer></script>
-</head>
-
-<body class="scroll-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="page coastal-page">
-
-    <header class="topbar">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A landscape architecture proposal for Mahachai Mangrove in Samut Sakhon, connecting coastal sediment improvement, mangrove restoration, research, and community learning.">
+<title>Coastal Sediment Improvement | Lakanapohn Sinparu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="assets/css/bsc-thesis.css"><link rel="stylesheet" href="assets/css/coastal-sediment.css"><script src="assets/js/coastal-sediment.js" defer></script>
+</head><body class="scroll-page bsc-page coastal-refresh"><a class="skip-link" href="#main-content">Skip to main content</a><div class="page coastal-page"><header class="topbar">
       <a href="index.html" class="top-left-brand">
         <span>Portfolio</span>
         <strong>Lakanapohn Sinparu</strong>
@@ -27,251 +13,19 @@
 
       <nav class="menu" aria-label="Primary navigation">
         <a href="about.html">About</a>
-        <a href="landscape-work.html" aria-current="page">Work</a>
+        <a href="index.html" aria-current="page">Work</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
-
-    <main id="main-content" class="coastal-main">
-      <section class="coastal-intro">
-        <p class="project-label">Landscape Architecture</p>
-        <h1>Coastal Sediment Improvement for Mahachai Mangrove</h1>
-        <p>
-          This conceptual design explores how landscape architecture can slow coastal erosion,
-          encourage sediment deposition, and rebuild mangrove habitat in Samut Sakhon, Thailand.
-          The story is inspired by research on Samut Sakhon in the Bangkok Metropolitan Region and
-          translates coastal processes into a layered design strategy: understand sea level rise,
-          place adaptive tools, trap sediment, and let mangrove systems grow with community stewardship.
-        </p>
-      </section>
-
-      <section class="coastal-slideshow" aria-label="Coastal sediment improvement image slideshow">
-        <button class="coastal-slide-arrow coastal-slide-arrow-left" type="button" aria-label="Previous image">‹</button>
-
-        <figure class="coastal-slide-card">
-          <div class="coastal-image-frame" id="coastalImageFrame" aria-live="polite"></div>
-          <figcaption class="coastal-caption">
-            <p id="coastalSlideNumber">01 / 05</p>
-            <h2 id="coastalSlideTitle">Sea Level Rise and Site Map</h2>
-            <p id="coastalSlideDescription"></p>
-          </figcaption>
-        </figure>
-
-        <button class="coastal-slide-arrow coastal-slide-arrow-right" type="button" aria-label="Next image">›</button>
-      </section>
-
-      <section class="coastal-thumbnails" aria-label="Coastal sediment improvement thumbnails"></section>
-    </main>
-  </div>
-
-  <div id="coastalImageLightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-labelledby="coastalLightboxTitle" aria-hidden="true">
-    <button class="lightbox-close" type="button" aria-label="Close full-size image">×</button>
-    <div class="lightbox-image-stage">
-      <img id="coastalLightboxImage" src="" alt="">
-    </div>
-    <div class="lightbox-controls" aria-label="Image zoom controls">
-      <button type="button" id="coastalZoomOut" aria-label="Zoom out">−</button>
-      <span id="coastalLightboxTitle">Coastal sediment image</span>
-      <button type="button" id="coastalZoomIn" aria-label="Zoom in">+</button>
-      <button type="button" id="coastalZoomReset" aria-label="Reset zoom">Reset</button>
-    </div>
-    <p class="lightbox-help">Scroll or use + / − to zoom. Drag the image to pan around the project image.</p>
-  </div>
-
-  <script>
-    const coastalCloudinaryConfig = Object.assign({ cloudName: "ngg4n92q", widths: [480, 800, 1200, 1600] }, window.PORTFOLIO_CLOUDINARY || {});
-    const coastalCloudinaryWidths = Array.isArray(coastalCloudinaryConfig.widths) && coastalCloudinaryConfig.widths.length
-      ? coastalCloudinaryConfig.widths
-      : [480, 800, 1200, 1600];
-    const coastalLargestWidth = Math.max.apply(null, coastalCloudinaryWidths);
-
-    function buildCoastalCloudinaryUrl(publicId, width) {
-      if (!publicId || !coastalCloudinaryConfig.cloudName || coastalCloudinaryConfig.cloudName === "REPLACE_WITH_CLOUD_NAME") {
-        return "";
-      }
-
-      return "https://res.cloudinary.com/" +
-        encodeURIComponent(coastalCloudinaryConfig.cloudName.trim()) +
-        "/image/upload/f_auto,q_auto,c_limit,w_" +
-        Number(width || coastalLargestWidth) +
-        "/" +
-        publicId.replace(/^\/+/, "");
-    }
-
-    const coastalSlides = [
-      {
-        title: "Sea Level Rise and Site Map",
-        alt: "Sea level rise and site map for Mahachai Mangrove",
-        cloudinaryPublicId: "coastal-sediment-sea-level-rise-site-map",
-        description: "The opening map frames Mahachai Mangrove as a vulnerable coastal edge between aquaculture land, canals, settlement, and the Gulf of Thailand. It highlights sea level rise exposure, eroding shoreline segments, and the project site where sediment-based landscape tools can be tested before connecting to wider mangrove restoration corridors."
-      },
-      {
-        title: "Adaptive Master Plan",
-        alt: "Adaptive master plan for coastal sediment improvement zones",
-        cloudinaryPublicId: "coastal-sediment-adaptive-master-plan",
-        description: "The master plan organizes the coast as a sequence of protection, sediment capture, mangrove nursery, research walk, and community learning zones. Instead of a hard wall, the design uses soft thresholds so tides can enter, drop sediment, and support future mangrove colonization."
-      },
-      {
-        title: "Sediment Improvement Tool Kit",
-        alt: "Sediment improvement tool kit diagrams",
-        cloudinaryPublicId: "coastal-sediment-improvement-tool-kit",
-        description: "The tool kit combines bamboo jetties, brushwood fences, porous traps, nursery planting, and monitoring stations. Each tool reduces wave energy at a different scale while allowing water to pass through, creating calmer pockets where suspended sediment can settle."
-      },
-      {
-        title: "Isometric Bamboo Jetty Tool",
-        alt: "Isometric bamboo jetty sediment tool",
-        cloudinaryPublicId: "coastal-sediment-isometric-bamboo-jetty-tool",
-        description: "This isometric view shows one sediment tool as a modular bamboo jetty set at an angle to the shoreline. The porous frame breaks wave force, slows the returning tide, and catches fine sediment behind the structure so planted mangrove seedlings have a more stable substrate."
-      },
-      {
-        title: "Coastal Section and Future Sedimentation",
-        alt: "Coastal section showing future sedimentation",
-        cloudinaryPublicId: "coastal-sediment-future-sedimentation-section",
-        description: "The final image reads the project as a living section: existing settlement and mangrove preservation transition to nursery work, bamboo breakwaters, future mudflat accumulation, and offshore porous fences. Over time, the section anticipates a wider intertidal platform that can absorb water, hold sediment, and support biodiversity."
-      }
-    ];
-
-    let coastalCurrentSlide = 0;
-    let coastalZoom = 1;
-    let coastalPanX = 0;
-    let coastalPanY = 0;
-    let coastalIsDragging = false;
-    let coastalStartX = 0;
-    let coastalStartY = 0;
-
-    const coastalImageFrame = document.getElementById("coastalImageFrame");
-    const coastalSlideNumber = document.getElementById("coastalSlideNumber");
-    const coastalSlideTitle = document.getElementById("coastalSlideTitle");
-    const coastalSlideDescription = document.getElementById("coastalSlideDescription");
-    const coastalThumbnailTrack = document.querySelector(".coastal-thumbnails");
-    const coastalLightbox = document.getElementById("coastalImageLightbox");
-    const coastalLightboxImage = document.getElementById("coastalLightboxImage");
-    const coastalLightboxTitle = document.getElementById("coastalLightboxTitle");
-
-    function applyCoastalImage(image, slide, width) {
-      const src = buildCoastalCloudinaryUrl(slide.cloudinaryPublicId, width || coastalLargestWidth);
-      image.src = src || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 680'%3E%3Crect width='1200' height='680' rx='28' fill='%23f7f4ee'/%3E%3Ctext x='600' y='320' text-anchor='middle' font-family='Inter, sans-serif' font-size='34' fill='%233f245d'%3EAdd your Cloudinary public ID%3C/text%3E%3Ctext x='600' y='365' text-anchor='middle' font-family='Inter, sans-serif' font-size='22' fill='%236d5a86'%3EEdit cloudinaryPublicId for this coastal slide.%3C/text%3E%3C/svg%3E";
-      image.onerror = function () {
-        image.onerror = null;
-        image.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 680'%3E%3Crect width='1200' height='680' rx='28' fill='%23f7f4ee'/%3E%3Ctext x='600' y='320' text-anchor='middle' font-family='Inter, sans-serif' font-size='34' fill='%233f245d'%3EAdd your Cloudinary public ID%3C/text%3E%3Ctext x='600' y='365' text-anchor='middle' font-family='Inter, sans-serif' font-size='22' fill='%236d5a86'%3EEdit cloudinaryPublicId for this coastal slide.%3C/text%3E%3C/svg%3E";
-      };
-      image.alt = slide.alt;
-      image.setAttribute("data-cloudinary-public-id", slide.cloudinaryPublicId);
-      image.srcset = src ? coastalCloudinaryWidths.map(function (cloudinaryWidth) {
-        return buildCoastalCloudinaryUrl(slide.cloudinaryPublicId, cloudinaryWidth) + " " + cloudinaryWidth + "w";
-      }).join(", ") : "";
-      image.sizes = "(max-width: 850px) calc(100vw - 52px), 1040px";
-    }
-
-    function updateCoastalSlide() {
-      const slide = coastalSlides[coastalCurrentSlide];
-      const image = document.createElement("img");
-      const zoomButton = document.createElement("button");
-
-      coastalImageFrame.classList.remove("is-entering");
-      void coastalImageFrame.offsetWidth;
-      coastalImageFrame.innerHTML = "";
-      applyCoastalImage(image, slide, coastalLargestWidth);
-      image.decoding = "async";
-      image.loading = "eager";
-      image.addEventListener("click", openCoastalLightbox);
-      zoomButton.className = "zoom-button";
-      zoomButton.type = "button";
-      zoomButton.setAttribute("aria-label", "Open full-size image");
-      zoomButton.textContent = "+";
-      zoomButton.addEventListener("click", openCoastalLightbox);
-      coastalImageFrame.appendChild(image);
-      coastalImageFrame.appendChild(zoomButton);
-      coastalImageFrame.classList.add("is-entering");
-      coastalSlideNumber.textContent = String(coastalCurrentSlide + 1).padStart(2, "0") + " / " + coastalSlides.length;
-      coastalSlideTitle.textContent = slide.title;
-      coastalSlideDescription.textContent = slide.description;
-
-      document.querySelectorAll(".coastal-thumbnail-button").forEach(function (button, index) {
-        button.classList.toggle("active", index === coastalCurrentSlide);
-        button.setAttribute("aria-current", index === coastalCurrentSlide ? "true" : "false");
-      });
-    }
-
-    function buildCoastalThumbnails() {
-      coastalSlides.forEach(function (slide, index) {
-        const button = document.createElement("button");
-        button.className = "coastal-thumbnail-button";
-        button.type = "button";
-        button.setAttribute("aria-label", "Show image " + (index + 1) + ": " + slide.title);
-        button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><strong>${slide.title}</strong>`;
-        button.addEventListener("click", function () {
-          coastalCurrentSlide = index;
-          updateCoastalSlide();
-        });
-        coastalThumbnailTrack.appendChild(button);
-      });
-    }
-
-    function setCoastalLightboxTransform() {
-      coastalLightboxImage.style.transform = "translate(" + coastalPanX + "px, " + coastalPanY + "px) scale(" + coastalZoom + ")";
-    }
-
-    function resetCoastalZoom() {
-      coastalZoom = 1;
-      coastalPanX = 0;
-      coastalPanY = 0;
-      setCoastalLightboxTransform();
-    }
-
-    function openCoastalLightbox() {
-      const slide = coastalSlides[coastalCurrentSlide];
-      applyCoastalImage(coastalLightboxImage, slide, coastalLargestWidth);
-      coastalLightboxTitle.textContent = slide.title;
-      resetCoastalZoom();
-      coastalLightbox.classList.add("active");
-      coastalLightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeCoastalLightbox() {
-      coastalLightbox.classList.remove("active");
-      coastalLightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-
-    document.querySelector(".coastal-slide-arrow-left").addEventListener("click", function () {
-      coastalCurrentSlide = coastalCurrentSlide === 0 ? coastalSlides.length - 1 : coastalCurrentSlide - 1;
-      updateCoastalSlide();
-    });
-
-    document.querySelector(".coastal-slide-arrow-right").addEventListener("click", function () {
-      coastalCurrentSlide = coastalCurrentSlide === coastalSlides.length - 1 ? 0 : coastalCurrentSlide + 1;
-      updateCoastalSlide();
-    });
-
-    document.querySelector("#coastalImageLightbox .lightbox-close").addEventListener("click", closeCoastalLightbox);
-    document.getElementById("coastalZoomIn").addEventListener("click", function () { coastalZoom = Math.min(coastalZoom + 0.25, 4); setCoastalLightboxTransform(); });
-    document.getElementById("coastalZoomOut").addEventListener("click", function () { coastalZoom = Math.max(coastalZoom - 0.25, 1); setCoastalLightboxTransform(); });
-    document.getElementById("coastalZoomReset").addEventListener("click", resetCoastalZoom);
-    coastalLightbox.addEventListener("click", function (event) { if (event.target === coastalLightbox) closeCoastalLightbox(); });
-    coastalLightbox.addEventListener("wheel", function (event) {
-      event.preventDefault();
-      coastalZoom = Math.min(Math.max(coastalZoom + (event.deltaY < 0 ? 0.15 : -0.15), 1), 4);
-      setCoastalLightboxTransform();
-    });
-    coastalLightboxImage.addEventListener("pointerdown", function (event) {
-      coastalIsDragging = true;
-      coastalStartX = event.clientX - coastalPanX;
-      coastalStartY = event.clientY - coastalPanY;
-      coastalLightboxImage.setPointerCapture(event.pointerId);
-    });
-    coastalLightboxImage.addEventListener("pointermove", function (event) {
-      if (!coastalIsDragging || coastalZoom === 1) return;
-      coastalPanX = event.clientX - coastalStartX;
-      coastalPanY = event.clientY - coastalStartY;
-      setCoastalLightboxTransform();
-    });
-    coastalLightboxImage.addEventListener("pointerup", function () { coastalIsDragging = false; });
-    document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeCoastalLightbox(); });
-
-    buildCoastalThumbnails();
-    updateCoastalSlide();
-  </script>
-</body>
-</html>
+<main id="main-content" class="coastal-main">
+<a class="work-back" href="landscape-work.html"><span aria-hidden="true">←</span><span>Back to Landscape Architecture</span></a>
+<section class="coastal-intro thesis-intro"><p class="project-label">Landscape Architecture · Bachelor’s Degree Project</p><h1>Coastal Sediment Improvement<br>for Mahachai Mangrove</h1></section>
+<section class="bsc-overview" aria-labelledby="coastal-overview-title"><div><p class="project-label">Design &amp; improvement of Mahachai Mangrove</p><h2 id="coastal-overview-title">Working with tides,<br>sediment, and mangroves.</h2><p>This landscape architecture proposal explores how sediment improvement and mangrove restoration can support a changing shoreline. The design brings coastal protection, ecological research, and public learning together at the Mahachai Gulf Coast Nature Study Center.</p></div><dl class="bsc-facts"><div><dt>Location</dt><dd>Bang Ya Phraek, Samut Sakhon, Thailand</dd></div><div><dt>Project</dt><dd>Conceptual landscape design during my bachelor’s degree</dd></div><div><dt>Focus</dt><dd>Coastal erosion, mangrove ecosystems, and community learning</dd></div></dl></section>
+<figure class="bsc-figure coastal-hero-map"><button class="coastal-open-image" type="button" data-drawing="0" aria-label="Open A landscape for restoration and learning in zoom viewer"><img src="assets/images/coastal/masterplan-display.webp" alt="A landscape for restoration and learning" width="3000" height="1759" decoding="async"><span class="coastal-zoom-hint">Click to zoom</span></button><figcaption><strong>A landscape for restoration and learning</strong> · The masterplan links mangrove preservation, nursery work, research boardwalks, and the learning center.</figcaption></figure>
+<section class="bsc-section coastal-context" aria-labelledby="coastal-context-title"><div class="coastal-context-copy"><p class="project-label">Site &amp; coastal change</p><h2 id="coastal-context-title">A vulnerable edge<br>between land and sea.</h2><p>The project studies a coastline where mangroves, aquaculture, waterways, and settlement meet. Coastal erosion and damaged infrastructure form the starting point for a proposal that combines ecosystem restoration with places to study and understand the shoreline.</p><p>The regional map sets the site within the Bangkok Metropolitan Region and the Gulf of Thailand. Its sea-level scenarios are part of the original project analysis.</p></div><figure class="bsc-figure coastal-context-map"><button type="button" class="coastal-open-image" data-context-image aria-label="Open sea-level rise and site map in zoom viewer"><img src="https://res.cloudinary.com/ngg4n92q/image/upload/f_auto,q_auto,c_limit,w_1600/BMR_cjnlpx" alt="Original project map showing sea-level scenarios in the Bangkok Metropolitan Region and an inset of the Samut Sakhon coast" loading="lazy" decoding="async"><span class="coastal-zoom-hint">Click to zoom</span></button><figcaption><strong>Sea-level rise &amp; site context</strong> · Regional analysis from the original design project.</figcaption></figure></section>
+<section class="bsc-section" aria-labelledby="coastal-strategy-title"><p class="project-label">Design strategy</p><h2 id="coastal-strategy-title">A coastline built in layers.</h2><p>The proposal combines mangrove preservation, nursery preparation, and a series of bamboo structures along the intertidal edge. The sediment tools explore different arrangements for moderating wave action and encouraging sediment to accumulate, creating conditions for future habitat restoration.</p><div class="coastal-strategies"><article><span class="coastal-step">01</span><h3>Angled bamboo jetties</h3><p>Bamboo structures arranged at a 60° angle form one of the proposed sediment improvement tools.</p></article><article><span class="coastal-step">02</span><h3>Strip-line bamboo fences</h3><p>Pyramidal bamboo fences are paired with small-scale aquatic farming in the second configuration.</p></article><article><span class="coastal-step">03</span><h3>An integrated arrangement</h3><p>Zigzagging bamboo jetties, pyramidal fences, and a netting trap bring the tools together.</p></article></div></section>
+<section class="bsc-section coastal-drawings" aria-labelledby="coastal-gallery-title"><p class="project-label">The design</p><h2 id="coastal-gallery-title">Explore the plans, tools &amp; coastal section.</h2><p>Follow the proposal from the masterplan to the sediment tools and the shoreline section. Open any drawing to view it in full, then zoom and drag to inspect the details.</p><div class="coastal-gallery-stage"><button class="coastal-gallery-arrow" id="coastalPrevious" type="button" aria-label="Previous drawing">‹</button><button class="coastal-open-image coastal-gallery-image" id="coastalGalleryTrigger" type="button" aria-label="Open Masterplan in zoom viewer"><img id="coastalGalleryImage" src="assets/images/coastal/masterplan-display.webp" alt="Mahachai Mangrove masterplan" decoding="async"><span class="coastal-zoom-hint">Click to zoom</span></button><button class="coastal-gallery-arrow" id="coastalNext" type="button" aria-label="Next drawing">›</button></div><div class="coastal-gallery-thumbnails" aria-label="Project drawing thumbnails"></div><div class="coastal-gallery-caption" aria-live="polite"><p id="coastalDrawingNumber">01 / 04</p><h3 id="coastalDrawingTitle">Masterplan</h3><p id="coastalDrawingDescription"></p></div></section>
+<section class="bsc-section" aria-labelledby="coastal-learning-title"><p class="project-label">Research &amp; community</p><h2 id="coastal-learning-title">Restoration as a place to learn.</h2><p>The Nature Study Center is conceived as a hub for studying coastal environmental diversity. Research spaces and boardwalks connect restoration work with public learning, helping visitors understand the value of mangroves and giving the community a place to engage with environmental conservation.</p><dl class="bsc-program coastal-program"><div><dt>Research &amp; study</dt><dd>Spaces to observe coastal systems and environmental diversity.</dd></div><div><dt>Ecosystem restoration</dt><dd>Landscape design that explores mangrove restoration and coastal erosion prevention.</dd></div><div><dt>Public knowledge</dt><dd>Learning opportunities that communicate the importance of coastal natural resources.</dd></div><div><dt>Community participation</dt><dd>A setting for local involvement in environmental conservation.</dd></div></dl></section>
+</main></div>
+<dialog id="coastalViewer" class="coastal-viewer" aria-labelledby="coastalViewerTitle"><button type="button" class="coastal-viewer-close" aria-label="Close zoom viewer">×</button><div class="coastal-viewer-toolbar"><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-zoom="reset">Reset</button><button type="button" data-zoom="in" aria-label="Zoom in">+</button></div><div class="coastal-viewer-stage"><img id="coastalViewerImage" alt="" draggable="false"></div><h2 id="coastalViewerTitle"></h2><p>Use + / − or scroll to zoom. Drag to explore the drawing.</p></dialog>
+<script id="coastalDrawingData" type="application/json">[{"image": "assets/images/coastal/masterplan.webp", "display": "assets/images/coastal/masterplan-display.webp", "thumbnail": "assets/images/coastal/masterplan-thumb.webp", "title": "Masterplan", "description": "The proposal connects mangrove preservation, nursery preparation, research boardwalks, and a learning center along the coastal edge.", "alt": "Masterplan — Mahachai Mangrove design proposal"}, {"image": "assets/images/coastal/isometric-proposal.webp?v=2", "display": "assets/images/coastal/isometric-proposal-display.webp?v=2", "thumbnail": "assets/images/coastal/isometric-proposal-thumb.webp?v=2", "title": "Sediment tools in the landscape", "description": "The isometric proposal shows where different sediment tools are placed along the mangrove edge.", "alt": "Sediment tools in the landscape — Mahachai Mangrove design proposal"}, {"image": "assets/images/coastal/sediment-tools.webp?v=2", "display": "assets/images/coastal/sediment-tools-display.webp?v=2", "thumbnail": "assets/images/coastal/sediment-tools-thumb.webp?v=2", "title": "Sediment improvement toolkit", "description": "Three configurations explore angled bamboo jetties, strip-line pyramidal bamboo fences, and an integrated arrangement with a netting trap.", "alt": "Sediment improvement toolkit — Mahachai Mangrove design proposal"}, {"image": "assets/images/coastal/coastal-section.webp", "display": "assets/images/coastal/coastal-section-display.webp", "thumbnail": "assets/images/coastal/coastal-section-thumb.webp", "title": "A section through the changing shoreline", "description": "The proposed section connects mangrove preservation and restoration, a plant nursery, bamboo breakwaters, and areas intended for future sedimentation.", "alt": "A section through the changing shoreline — Mahachai Mangrove design proposal"}]</script></body></html>

@@ -1,0 +1,16 @@
+.urban-page .urban-planning-page { padding-bottom:90px; }
+.urban-context { display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center; }
+.urban-context > div > p:not(.project-label) { color:var(--purple-soft); font-size:.93rem; line-height:1.85; }
+.urban-context .bsc-figure { margin-top:0; }
+.urban-context .coastal-open-image img { height:600px; object-fit:contain; }
+.urban-zones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin-top:36px; }
+.urban-zone { min-width:0; }
+.urban-zone .coastal-open-image img { height:230px; object-fit:contain; }
+.urban-zone .coastal-zoom-hint { font-size:.58rem; padding:5px 8px; right:8px; bottom:8px; }
+.urban-zone h3 { font:600 1.7rem/1.15 "Cormorant Garamond",serif; margin:24px 0 16px; }
+.urban-zone p { color:var(--purple-soft); font-size:.86rem; line-height:1.75; }
+.urban-zone-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.urban-zone-actions .bsc-facilities-button { margin-top:0; font-size:.73rem; padding:8px 12px; }
+.urban-page .bsc-zone-picker { margin-top:28px; }
+@media(max-width:850px) { .urban-context { grid-template-columns:1fr; gap:28px; } .urban-context .bsc-figure { max-width:480px; margin:0 auto; } .urban-zones { grid-template-columns:1fr; gap:44px; } .urban-zone .coastal-open-image img { height:auto; max-height:440px; } }
+@media(max-width:560px) { .urban-context .coastal-open-image img { height:440px; } }

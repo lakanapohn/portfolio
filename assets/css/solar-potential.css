@@ -37,7 +37,6 @@
 .solar-scenarios h3 {font-size:1.6rem;}
 .solar-scenarios p {font-size:.88rem;}
 .solar-scenarios .solar-threshold {color:var(--purple);}
-.solar-back {margin-top:40px;}
 @media(max-width:850px) {
   .solar-jump {justify-content:flex-start; gap:10px 22px;}
   .solar-section {margin-top:56px;}
