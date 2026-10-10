@@ -1818,3 +1818,38 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* Work hierarchy, aligned below the primary menu. */
+.work-breadcrumb {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px 10px;
+  max-width: 100%;
+  color: var(--purple-soft);
+  font-size: .76rem;
+  line-height: 1.65;
+  text-align: right;
+}
+.work-breadcrumb a {
+  color: var(--purple);
+  border-bottom: 1px solid var(--yellow);
+}
+.work-breadcrumb a:hover { border-bottom-color: var(--purple); }
+.work-breadcrumb [aria-current="page"] { font-weight: 500; }
+.breadcrumb-divider { color: var(--purple-soft); opacity: .6; }
+@media (max-width: 850px) {
+  .work-topbar { row-gap: 18px; }
+  .work-breadcrumb {
+    position: static;
+    flex-basis: 100%;
+    margin-left: auto;
+    font-size: .72rem;
+    gap: 6px 8px;
+  }
+  .work-topbar + .project-main { padding-top: 48px; }
+}

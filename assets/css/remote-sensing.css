@@ -1,0 +1,61 @@
+/* Remote Sensing and Radar: the existing portfolio palette and typography. */
+.radar-main {max-width:1040px; margin:0 auto;}
+.radar-page .project-intro {margin-bottom:30px;}
+.radar-page .radar-subtitle {font-family:"Cormorant Garamond",serif; font-size:1.8rem; color:var(--purple);}
+.radar-jump {display:flex; flex-wrap:wrap; justify-content:center; gap:16px 28px; margin-bottom:38px; font-size:.85rem;}
+.radar-jump a {padding:8px 0; border-bottom:1px solid var(--line);}
+.radar-jump a:hover {border-color:var(--yellow);}
+.radar-section {margin-top:70px; scroll-margin-top:30px;}
+.radar-section h2,.radar-project-card h2 {font-family:"Cormorant Garamond",serif; font-size:clamp(2rem,3.3vw,3rem); font-weight:600; line-height:1.1; margin:0 0 22px;}
+.radar-section h3 {font-family:"Cormorant Garamond",serif; font-size:1.7rem; margin:0 0 12px; line-height:1.15;}
+.radar-section p,.radar-data dd,.radar-project-card p {font-size:.95rem; color:var(--purple-soft); line-height:1.85;}
+.radar-section > p {max-width:840px;}
+.radar-figure {margin:28px 0 0; min-width:0;}
+.radar-figure > a {display:block; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:#303030;}
+.radar-figure img {width:100%; height:auto; display:block;}
+.radar-figure figcaption {color:var(--purple-soft); font-size:.8rem; line-height:1.7; margin-top:12px;}
+.radar-figure figcaption strong {color:var(--purple); font-weight:600;}
+.radar-figure figcaption span {display:block; font-size:.72rem; margin-top:4px;}
+.radar-date-pair,.radar-data {display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:30px 0;}
+.radar-date-pair > div {border:1px solid var(--line); border-radius:18px; padding:24px;}
+.radar-date-pair span {display:block; font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; margin-bottom:14px;}
+.radar-date-pair strong {font-family:"Cormorant Garamond",serif; font-size:1.6rem; font-weight:600;}
+.radar-date-pair p {margin-bottom:0; font-size:.85rem;}
+.radar-data > div {border-top:1px solid var(--line); padding-top:18px;}
+.radar-data dt {font-weight:600; margin-bottom:10px;}
+.radar-data dd {margin:0;}
+.radar-data a {color:var(--purple); text-decoration:underline; text-decoration-color:var(--yellow); text-underline-offset:3px;}
+.radar-workflow {padding-left:26px; max-width:840px;}
+.radar-workflow li {padding-left:14px; margin:26px 0;}
+.radar-workflow li::marker {color:var(--purple); font-weight:600;}
+.radar-workflow p {margin:0;}
+.radar-comparison {display:grid; grid-template-columns:1fr 1fr; column-gap:28px; grid-template-rows:auto auto auto;}
+.radar-comparison article {min-width:0; display:grid; grid-template-rows:subgrid; grid-row:span 3;}
+.radar-comparison .radar-figure > a {aspect-ratio:2.62;}
+.radar-comparison img {height:100%; object-fit:contain;}
+.radar-section .radar-note {border-left:3px solid var(--yellow); padding:16px 22px; background:rgba(255,255,255,.4); font-size:.88rem; margin:28px 0;}
+.radar-attribution {font-size:.7rem; color:var(--purple-soft); line-height:1.7; margin-top:40px;}
+.radar-project-card {display:grid; grid-template-columns:110px 1fr; gap:32px; padding:42px; max-width:840px; margin:0 auto 40px; border:1px solid var(--line); border-radius:28px; background:rgba(255,255,255,.35);}
+.radar-card-icon {width:100px; height:100px; display:grid; place-items:center; border-radius:50%; background:var(--yellow-soft);}
+.radar-card-icon svg {width:75%; height:75%; stroke:var(--purple); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+.radar-card-icon .dot {fill:var(--yellow); stroke:none;}
+.radar-project-card .project-label {font-size:.75rem; color:var(--purple); margin:0 0 14px;}
+@media(max-width:850px) {
+  .radar-jump {justify-content:flex-start; gap:10px 22px;}
+  .radar-section {margin-top:52px;}
+  .radar-data,.radar-date-pair {grid-template-columns:1fr; gap:22px;}
+  .radar-comparison {grid-template-columns:1fr; grid-template-rows:none; gap:38px;}
+  .radar-comparison article {display:block; grid-row:auto;}
+}
+@media(max-width:560px) {.radar-project-card {grid-template-columns:1fr; padding:28px; gap:24px;}}
+
+/* Eruption context photograph and the unfinished StoryMap. */
+.radar-photo-source {display:block; width:fit-content; margin-top:8px; color:var(--purple); text-decoration:underline; text-decoration-color:var(--yellow); text-underline-offset:3px;}
+.radar-storymap {margin-top:42px; padding:36px 40px; border:1px solid var(--line); border-radius:24px; background:rgba(255,255,255,.4); scroll-margin-top:30px;}
+.radar-storymap .project-label {color:var(--purple-soft); font-size:.75rem; margin:0 0 14px;}
+.radar-storymap h2 {font-family:"Cormorant Garamond",serif; font-size:clamp(2rem,3.5vw,3.1rem); font-weight:600; line-height:1.1; margin:0;}
+.radar-storymap-subtitle {font-family:"Cormorant Garamond",serif; font-size:1.55rem; line-height:1.4; margin:16px 0;}
+.radar-storymap-byline {font-size:.8rem; line-height:1.8; color:var(--purple-soft); margin:0 0 20px;}
+.radar-storymap-status {display:inline-block; padding:8px 14px; background:var(--yellow-soft); border-radius:999px; font-size:.76rem; font-weight:600; margin:0;}
+.radar-storymap-message {font-size:.9rem; line-height:1.8; color:var(--purple-soft); max-width:740px; margin:18px 0 0;}
+@media(max-width:560px) {.radar-storymap {padding:26px 24px;}}

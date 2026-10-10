@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sentinel-1 radar interferometry exploring volcanic deformation around Grindavík on Iceland’s Reykjanes Peninsula." />
+
+  <title>Radar | Lakanapohn Sinparu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/remote-sensing.css" />
+  <script src="assets/js/cloudinary-config.js" defer></script>
+  <script src="assets/js/cloudinary.js" defer></script>
+</head>
+
+<body class="scroll-page radar-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="page project-page">
+    <header class="topbar work-topbar">
+      <a href="index.html" class="top-left-brand">
+        <span>Portfolio</span>
+        <strong>Lakanapohn Sinparu</strong>
+      </a>
+
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="index.html" aria-current="page">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <nav class="work-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Work</a><span class="breadcrumb-divider" aria-hidden="true">/</span><a href="msc-work.html">Geoinformatics</a><span class="breadcrumb-divider" aria-hidden="true">/</span><a href="remote-sensing.html">Remote Sensing</a><span class="breadcrumb-divider" aria-hidden="true">/</span><span aria-current="page">Radar</span></nav>
+    </header>
+
+<main id="main-content" class="project-main radar-main">
+<section class="project-intro">
+  <p class="project-label">Remote Sensing · Sentinel-1 · InSAR</p>
+  <h1>Radar</h1>
+  <p class="radar-subtitle">Tracing volcanic deformation in Iceland</p>
+  <p>Comparing radar phase before and across an eruption can reveal how the ground changes. This project explores topographic and differential interferometry around Grindavík on the Reykjanes Peninsula, using Sentinel-1 observations and a terrain-corrected displacement result.</p>
+</section>
+<nav class="radar-jump" aria-label="Project sections"><a href="#storymap">StoryMap</a><a href="#context">Context</a><a href="#data">Data</a><a href="#workflow">Workflow</a><a href="#comparison">Comparison</a><a href="#displacement">Displacement</a></nav>
+<figure class="radar-figure radar-eruption-photo">
+  <a href="assets/images/radar/grindavik-eruption-ap.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size photograph of the volcanic fissure near Grindavík">
+    <img src="assets/images/radar/grindavik-eruption-ap.jpg" alt="Lava erupting from the northern active segment of the original volcanic fissure near Grindavík, Iceland, on 19 December 2023" width="1080" height="719" loading="eager" decoding="async">
+  </a>
+  <figcaption>A close up of the Northern active segment of the original fissure of an active volcano near Grindavik on Iceland’s Reykjanes Peninsula, Tuesday, Dec. 19, 2023. <strong>AP Photo/Marco Di Marco.</strong> <a class="radar-photo-source" href="https://news.northeastern.edu/2023/12/19/how-long-do-volcanic-eruptions-last/" target="_blank" rel="noopener noreferrer">Source: Northeastern Global News ↗</a></figcaption>
+</figure>
+<section id="storymap" class="radar-storymap" aria-labelledby="storymap-title">
+  <p class="project-label">ArcGIS StoryMaps</p>
+  <h2 id="storymap-title">Watching the Ground Move</h2>
+  <p class="radar-storymap-subtitle">Detecting Volcanic Deformation at Grindavík with Sentinel-1 Radar</p>
+  <p class="radar-storymap-byline">Lakanapohn Sinparu · MSc. Applied Geoinformatics, University of Salzburg · May 2026</p>
+  <p class="radar-storymap-status">StoryMap in progress</p>
+  <p class="radar-storymap-message">An interactive story connecting the eruption context, radar workflow, and deformation results. The StoryMap link will be available here when the story is complete.</p>
+  <!-- Add the public StoryMap URL only after the story is complete and publication is requested. -->
+</section>
+<section id="context" class="radar-section">
+  <p class="project-label">Study area &amp; purpose</p><h2>Reading change around Grindavík</h2>
+  <p>The Reykjanes Peninsula is a volcanic landscape in southwest Iceland. This analysis focuses on the period around the first Sundhnúkur eruption in December 2023 and asks how an event-spanning interferogram differs from a pre-event pair that retains topographic phase.</p>
+  <p>Interferometric SAR (InSAR) compares the phase of radar observations acquired at different times. The resulting fringes help examine spatial changes that may be associated with ground deformation, while also reflecting other sources of phase variation.</p>
+  <div class="radar-date-pair"><div><span>Pre-event pair</span><strong>24 Nov → 6 Dec 2023</strong><p>12-day interval; topographic phase retained.</p></div><div><span>Event-spanning pair</span><strong>6 Dec → 30 Dec 2023</strong><p>24-day interval; estimated topographic phase removed.</p></div></div>
+</section>
+<section id="data" class="radar-section">
+  <p class="project-label">Public data &amp; tools</p><h2>Three acquisitions, two comparisons</h2>
+  <dl class="radar-data">
+    <div><dt>Sentinel-1 radar imagery</dt><dd>Single Look Complex (SLC) products downloaded from <a href="https://search.asf.alaska.edu/" target="_blank" rel="noopener noreferrer">ASF Vertex</a>. The selection uses ascending acquisitions, Interferometric Wide (IW) swath mode, and VV polarization on 24 November, 6 December, and 30 December 2023.</dd></div>
+    <div><dt>Elevation reference</dt><dd>The <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" rel="noopener noreferrer">Copernicus 30 m Global DEM</a> supports back-geocoding, topographic phase removal, and terrain correction.</dd></div>
+    <div><dt>Radar processing</dt><dd><a href="https://step.esa.int/main/toolboxes/snap/" target="_blank" rel="noopener noreferrer">ESA SNAP</a> provides the Sentinel-1 TOPS processing workflow, interferogram formation, filtering, and phase-to-displacement conversion.</dd></div>
+    <div><dt>Phase unwrapping</dt><dd><a href="https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" target="_blank" rel="noopener noreferrer">SNAPHU</a> is used with the DEFO statistical-cost mode through SNAP’s export/import workflow.</dd></div>
+  </dl>
+<figure class="radar-figure"><a href="assets/images/radar/data-selection.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: ASF Vertex search showing the selected Sentinel-1 products over southwest Iceland"><img src="assets/images/radar/data-selection.webp" alt="ASF Vertex search showing the selected Sentinel-1 products over southwest Iceland" width="1299" height="616" loading="lazy" decoding="async"></a><figcaption><strong>Sentinel-1 selection</strong> The chosen scenes cover the same study area and provide the pre-event and event-spanning pairs. <span>Open image to view details ↗</span></figcaption></figure>
+</section>
+<section id="workflow" class="radar-section">
+  <p class="project-label">Processing approach</p><h2>From radar scenes to displacement</h2>
+  <ol class="radar-workflow">
+    <li><h3>Prepare matching bursts</h3><p>Apply S-1 TOPS Split to all three scenes using subswath IW1, VV polarization, and bursts 8–9, then apply orbit correction.</p></li>
+    <li><h3>Align each image pair</h3><p>Use S-1 Back-Geocoding and the Copernicus DEM to coregister the pre-event and event-spanning stacks.</p></li>
+    <li><h3>Form the interferograms</h3><p>Calculate phase differences, subtract the flat-earth phase, and merge the TOPS bursts with TOPSAR Deburst.</p></li>
+    <li><h3>Separate the two approaches</h3><p>Retain the topographic contribution in the pre-event result. Remove the estimated topographic phase from the event-spanning pair to obtain the differential result.</p></li>
+    <li><h3>Reduce noise</h3><p>Apply multilooking and Goldstein Phase Filtering to improve the visual continuity of the fringe patterns.</p></li>
+    <li><h3>Unwrap and map</h3><p>Export the differential phase to SNAPHU, import the unwrapped result, convert phase to displacement, and apply Range Doppler Terrain Correction.</p></li>
+  </ol>
+<figure class="radar-figure"><a href="assets/images/radar/tops-split.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Three Sentinel-1 burst strips displayed in SNAP"><img src="assets/images/radar/tops-split.webp" alt="Three Sentinel-1 burst strips displayed in SNAP" width="1229" height="651" loading="lazy" decoding="async"></a><figcaption><strong>Matching the study area</strong> The same burst selection is used across the three acquisitions before pairwise processing. <span>Open image to view details ↗</span></figcaption></figure>
+</section>
+<section id="comparison" class="radar-section">
+  <p class="project-label">Results</p><h2>Topographic and differential phase</h2>
+  <div class="radar-comparison">
+    <article><h3>Pre-event interferogram</h3><p>The 24 November–6 December pair shows curved fringes with topographic phase retained. Noisy areas make parts of the pattern harder to interpret.</p>
+<figure class="radar-figure"><a href="assets/images/radar/topographic-interferogram.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Filtered pre-event topographic interferogram, 24 November to 6 December 2023"><img src="assets/images/radar/topographic-interferogram.webp" alt="Filtered pre-event topographic interferogram, 24 November to 6 December 2023" width="1229" height="469" loading="lazy" decoding="async"></a><figcaption><strong>Topographic phase retained</strong> Curved fringes and background phase variation in the pre-event pair. <span>Open image to view details ↗</span></figcaption></figure></article>
+    <article><h3>Event-spanning interferogram</h3><p>The 6–30 December pair shows denser fringes in the middle-left area after topographic phase removal, consistent with a stronger non-topographic phase gradient.</p>
+<figure class="radar-figure"><a href="assets/images/radar/differential-interferogram.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Filtered event-spanning differential interferogram, 6 to 30 December 2023"><img src="assets/images/radar/differential-interferogram.webp" alt="Filtered event-spanning differential interferogram, 6 to 30 December 2023" width="1160" height="450" loading="lazy" decoding="async"></a><figcaption><strong>Topographic phase removed</strong> A different fringe pattern across the eruption period. <span>Open image to view details ↗</span></figcaption></figure></article>
+  </div>
+  <p class="radar-note">The pairs cover different time intervals and use different phase treatments. Their contrast is informative, but it does not isolate deformation by itself: atmospheric effects, coherence loss, orbit uncertainty, and DEM errors can also influence phase.</p>
+</section>
+<section id="displacement" class="radar-section">
+  <p class="project-label">From phase to a spatial pattern</p><h2>Terrain-corrected displacement</h2>
+  <p>After phase unwrapping and conversion, the terrain-corrected result shows a pronounced colour contrast around the area of dense differential fringes. It provides a spatial view of the derived line-of-sight displacement signal over the event-spanning period.</p>
+<figure class="radar-figure"><a href="assets/images/radar/displacement-map.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Terrain-corrected displacement display with blue, yellow and bright white regions"><img src="assets/images/radar/displacement-map.webp" alt="Terrain-corrected displacement display with blue, yellow and bright white regions" width="1501" height="416" loading="lazy" decoding="async"></a><figcaption><strong>Derived displacement pattern</strong> The original colour-stretched result. Without a numerical legend, the colours should not be read as a specific displacement magnitude or movement direction. <span>Open image to view details ↗</span></figcaption></figure>
+  <h3>What this comparison shows</h3><p>The workflow demonstrates how removing a terrain contribution changes the interpretation of radar phase and how unwrapping enables a displacement product. The event-spanning pattern is consistent with possible volcanic deformation, but the result remains an exploratory analysis rather than a validated measurement of vertical ground motion.</p>
+  <p class="radar-note">Further interpretation would require coherence assessment, checks on unwrapping and the reference point, a calibrated numerical legend, and comparison with independent observations. Radar measures along the satellite’s line of sight, so a single viewing geometry does not directly separate vertical and horizontal motion.</p>
+</section>
+<p class="radar-attribution">Produced using Copernicus WorldDEM-30 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018, provided under COPERNICUS by the European Union and ESA; all rights reserved.</p>
+<a class="storymap-link" href="remote-sensing.html">← Back to Remote Sensing</a>
+</main></div></body></html>
