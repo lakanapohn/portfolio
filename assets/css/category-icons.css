@@ -1,0 +1,7 @@
+/* Block-print category artwork, with the supplied blue and sage palette. */
+.work-circle, .sub-work-circle.icon-circle { border-color:#B3DCD6; background:rgba(179,220,214,.13); }
+.work-circle::before, .sub-work-circle.icon-circle::before { background:#D2E8AE; opacity:.75; }
+.work-circle .category-print-icon, .sub-work-circle.icon-circle .category-print-icon { display:block; width:73%; height:73%; object-fit:contain; position:relative; z-index:1; border-radius:0; }
+.work-item:hover .work-circle, .sub-work-item:hover .sub-work-circle.icon-circle { border-color:#739CBD; box-shadow:0 0 0 4px rgba(179,220,214,.18); }
+.solar-project-icon, .radar-card-icon { background:#B3DCD6; }
+.solar-project-icon .category-print-icon, .radar-card-icon .category-print-icon { display:block; width:78%; height:78%; object-fit:contain; }
