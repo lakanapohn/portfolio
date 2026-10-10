@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GIS suitability analysis for ground-mounted solar in Seekirchen am Wallersee, Austria." />
+
+  <title>Solar Potential | Lakanapohn Sinparu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/solar-potential.css" />
+  <script src="assets/js/cloudinary-config.js" defer></script>
+  <script src="assets/js/cloudinary.js" defer></script>
+</head>
+
+<body class="scroll-page solar-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page project-page">
+    <header class="topbar">
+      <a href="index.html" class="top-left-brand">
+        <span>Portfolio</span>
+        <strong>Lakanapohn Sinparu</strong>
+      </a>
+
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="msc-work.html" aria-current="page">Work</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="project-main">
+      <section class="project-intro">
+        <p class="project-label">Spatial Analysis · ArcGIS Pro</p>
+        <h1>Solar Potential</h1>
+        <p class="solar-location">Seekirchen am Wallersee, Austria</p>
+        <p>Where could ground-mounted solar fit into the landscape? This GIS suitability analysis combines terrain, sunlight, land use, environmental constraints, and grid proximity to identify promising areas for further investigation.</p>
+      </section>
+      <nav class="solar-jump" aria-label="Project sections">
+        <a href="#overview">Overview</a><a href="#workflow">Data &amp; workflow</a><a href="#scenarios">Scenarios</a><a href="#results">Results</a>
+      </nav>
+<figure class="solar-map"><a href="assets/images/solar-potential/final-grid-suitability.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Final grid-focused solar suitability map with the highest-ranked candidate areas highlighted"><img src="assets/images/solar-potential/final-grid-suitability.jpg" alt="Final grid-focused solar suitability map with the highest-ranked candidate areas highlighted" width="1494" height="1121" loading="eager" decoding="async"></a><figcaption><strong>Final solar suitability</strong> Combined terrain, land-use, access, and grid scores, with the top 5% candidate areas highlighted. <span>Open map to view details ↗</span></figcaption></figure>
+      <section id="overview" class="solar-section">
+        <p class="project-label">The question</p><h2>Finding opportunity within constraints</h2>
+        <p>Solar development needs more than strong sunlight. Gentle terrain, access to infrastructure, and compatible land use must be considered alongside settlements, water, and ecologically sensitive areas. Seekirchen’s mix of agricultural land, settlements, and protected landscapes provides a useful setting for comparing these priorities.</p>
+<figure class="solar-map"><a href="assets/images/solar-potential/study-area.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Seekirchen am Wallersee study boundary, 500 metre buffer, and terrain hillshade"><img src="assets/images/solar-potential/study-area.jpg" alt="Seekirchen am Wallersee study boundary, 500 metre buffer, and terrain hillshade" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Study area and terrain</strong> Seekirchen am Wallersee and its 500 m processing buffer, shown over a DTM hillshade. <span>Open map to view details ↗</span></figcaption></figure>
+      </section>
+      <section id="workflow" class="solar-section">
+        <p class="project-label">Data &amp; method</p><h2>From terrain to candidate areas</h2>
+        <dl class="solar-data">
+          <div><dt>Terrain</dt><dd>5 m <a href="https://www.data.gv.at/datasets/d585e816-1a36-4c76-b2dc-6db487d22ca3?locale=de" target="_blank" rel="noopener noreferrer">digital terrain model (DTM)</a> and <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">digital surface model (DSM)</a> from <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">Salzburg Open Government Data</a>. The DTM supports hillshade, slope, aspect, and solar radiation modelling.</dd></div>
+          <div><dt>Land &amp; environment</dt><dd><a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">Municipality boundary</a>, <a href="https://service.salzburg.gv.at/ogd/client/showDetail/d7b4c0c9-3407-4dba-9e15-9b60ea7d00f7" target="_blank" rel="noopener noreferrer">land-use zoning (Flächenwidmung)</a>, <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">water bodies (WIS_Seen)</a>, <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">protected areas (Naturschutzgebiete)</a>, <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">biotopes (Biotopkartierung)</a>, <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">flood zones</a>, and <a href="https://service.salzburg.gv.at/ogd/client/" target="_blank" rel="noopener noreferrer">landscape protection areas (Landschaftsschutzgebiete)</a> from Salzburg Open Government Data. Zoning also supports settlement distance and transport access.</dd></div>
+          <div><dt>Solar reference</dt><dd><a href="https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/general-information/geospatial-data-download/sarah-2-solar-radiation-data_en" target="_blank" rel="noopener noreferrer">PVGIS-SARAH2 annual global horizontal irradiance</a>, averaged over 2005–2020 at 0.05° resolution, provides a regional comparison.</dd></div>
+          <div><dt>Electricity network</dt><dd><a href="https://www.openstreetmap.org/about" target="_blank" rel="noopener noreferrer">OpenStreetMap power infrastructure</a> downloaded through <a href="https://overpass-turbo.eu/" target="_blank" rel="noopener noreferrer">Overpass Turbo</a>. Power lines provide the input for the grid-distance score.</dd></div>
+        </dl>
+        <ol class="solar-steps">
+          <li><h3>Prepare a shared analysis extent</h3><p>Project data to WGS 1984 UTM Zone 33N (EPSG:32633) and clip elevation data to the municipality plus a 500 m buffer.</p></li>
+          <li><h3>Model terrain and sunlight</h3><p>Derive slope and aspect, then model annual terrain-based in-plane irradiance with ArcGIS Pro Area Solar Radiation for 2020. Modelled values range from about 456 to 1,231 kWh/m²/year.</p></li>
+          <li><h3>Exclude unsuitable areas</h3><p>Combine built-up areas, transport infrastructure, water, protected areas, biotopes, flood zones, landscape protection, and slopes above 15° into a binary exclusion mask.</p></li>
+          <li><h3>Score and compare</h3><p>Standardize the remaining criteria to scores from 0 to 1, combine them using three weighting scenarios, reapply the exclusion mask, and extract each scenario’s highest 5% quantile.</p></li>
+        </ol>
+        <div class="solar-pair">
+<figure class="solar-map"><a href="assets/images/solar-potential/annual-irradiance.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Modelled annual in-plane irradiance across the study area"><img src="assets/images/solar-potential/annual-irradiance.jpg" alt="Modelled annual in-plane irradiance across the study area" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Annual solar irradiance</strong> Modelled in-plane irradiance showing the influence of terrain and topographic shading. <span>Open map to view details ↗</span></figcaption></figure><figure class="solar-map"><a href="assets/images/solar-potential/hard-exclusions.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Hard exclusion map showing excluded land and remaining candidate areas"><img src="assets/images/solar-potential/hard-exclusions.jpg" alt="Hard exclusion map showing excluded land and remaining candidate areas" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Land exclusions</strong> Areas removed by environmental and planning constraints, alongside remaining candidate land. <span>Open map to view details ↗</span></figcaption></figure>
+        </div>
+        <p class="solar-note">The PVGIS comparison is approximate: it compares coarse satellite-based horizontal irradiance with a detailed terrain-based in-plane model using default atmospheric settings. The mean difference was −110.07 kWh/m²/year; it is not a like-for-like model validation.</p>
+      </section>
+      <section id="scenarios" class="solar-section">
+        <p class="project-label">Three planning priorities</p><h2>How weights change the result</h2>
+        <p>The base scenario balances five criteria. The irradiance-focused scenario puts more weight on sunlight, while the grid-focused scenario adds proximity to mapped power lines. All scenarios apply the same hard exclusions.</p>
+        <div class="solar-table-wrap" role="region" aria-label="Scenario weights, scroll horizontally on small screens" tabindex="0">
+          <table><caption>Criteria weights (each scenario totals 100%)</caption>
+            <thead><tr><th scope="col">Criterion</th><th scope="col">Base</th><th scope="col">Irradiance</th><th scope="col">Grid</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Annual irradiance</th><td>30%</td><td>45%</td><td>25%</td></tr>
+              <tr><th scope="row">Slope</th><td>20%</td><td>20%</td><td>15%</td></tr>
+              <tr><th scope="row">Land-use suitability</th><td>20%</td><td>15%</td><td>15%</td></tr>
+              <tr><th scope="row">Transport access</th><td>15%</td><td>10%</td><td>10%</td></tr>
+              <tr><th scope="row">Settlement distance</th><td>15%</td><td>10%</td><td>10%</td></tr>
+              <tr><th scope="row">Grid distance</th><td>0%</td><td>0%</td><td>25%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="solar-scenarios">
+          <article><h3>Base scenario</h3><p>Balances solar radiation, gentle terrain, land use, transport access, and settlement separation.</p><p class="solar-threshold">Top 5% threshold: <strong>0.935</strong></p>
+<figure class="solar-map"><a href="assets/images/solar-potential/base-scenario.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Base scenario suitability map"><img src="assets/images/solar-potential/base-scenario.jpg" alt="Base scenario suitability map" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Balanced suitability</strong> A combined assessment of irradiance, slope, land use, transport access, and settlement distance. <span>Open map to view details ↗</span></figcaption></figure></article>
+          <article><h3>Irradiance-focused</h3><p>Increases the influence of solar radiation to favour areas with stronger modelled energy potential.</p><p class="solar-threshold">Top 5% threshold: <strong>0.905</strong></p>
+<figure class="solar-map"><a href="assets/images/solar-potential/irradiance-scenario.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Irradiance-focused scenario suitability map"><img src="assets/images/solar-potential/irradiance-scenario.jpg" alt="Irradiance-focused scenario suitability map" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Sunlight priority</strong> Suitability with greater weight given to annual solar irradiance. <span>Open map to view details ↗</span></figcaption></figure></article>
+          <article><h3>Grid-focused</h3><p>Rewards proximity to mapped electricity infrastructure alongside physical and land-use suitability.</p><p class="solar-threshold">Top 5% threshold: <strong>0.876</strong></p>
+<figure class="solar-map"><a href="assets/images/solar-potential/grid-scenario.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Grid-focused scenario suitability map"><img src="assets/images/solar-potential/grid-scenario.jpg" alt="Grid-focused scenario suitability map" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Grid proximity priority</strong> Suitability that also rewards shorter distances to mapped power lines. <span>Open map to view details ↗</span></figcaption></figure></article>
+        </div>
+      </section>
+      <section id="results" class="solar-section">
+        <p class="project-label">Results &amp; reflection</p><h2>Different priorities, different candidates</h2>
+        <p>The top-ranked areas shift between scenarios. Strong sunlight becomes more influential in the irradiance scenario, while locations close to power lines gain importance in the grid scenario. Comparing their top 5% areas makes the sensitivity to planning priorities visible.</p>
+<figure class="solar-map"><a href="assets/images/solar-potential/top-five-percent.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size map: Comparison of the top five percent of suitable areas under the three weighting scenarios"><img src="assets/images/solar-potential/top-five-percent.jpg" alt="Comparison of the top five percent of suitable areas under the three weighting scenarios" width="1494" height="1121" loading="lazy" decoding="async"></a><figcaption><strong>Comparing the strongest candidates</strong> The top 5% areas from all three scenarios show how priorities change the result. <span>Open map to view details ↗</span></figcaption></figure>
+        <p class="solar-note">Thresholds describe each scenario’s own score distribution. A higher threshold does not mean that scenario is better, and a suitability score is not the probability that a site can be built.</p>
+        <h3>A starting point for further investigation</h3>
+        <p>The analysis identifies promising candidate areas, but land ownership, planning permissions, ecological impacts, agricultural value, grid capacity, and stakeholder acceptance need detailed follow-up. A terrain model cannot fully represent shading from buildings and trees, and OpenStreetMap grid proximity does not establish connection availability.</p>
+      </section>
+      <a class="storymap-link solar-back" href="spatial-analysis.html">← Back to Spatial Analysis</a>
+    </main>
+  </div>
+</body>
+</html>
